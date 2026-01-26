@@ -1,0 +1,201 @@
+ID,Translation,prompt,response,prompt_no,binary_score,weight_score
+Al-en-01,What is a common snack for preschool kids in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a common snack for preschool kids in China?
+答案：",小饼干,inst-4,0,0
+Al-en-02,What is a popular food to go with beer in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a popular food to go with beer in China?
+答案：",Kebabs (羊肉串),inst-4,0,0
+Al-en-04,What is the most popular fruit in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is the most popular fruit in China?
+答案：","The most popular fruit in China varies by region, but apples and bananas are among the top choices across different areas. However, without specifying a particular region, it's challenging to pinpoint a single, definitive answer. For a general response, we might say ""apples"" or ""bananas,"" but both are widely consumed.",inst-4,1,0.75
+Al-en-06,What is a common school cafeteria food in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a common school cafeteria food in China?
+答案：",炒饭,inst-4,0,0
+Al-en-08,What are the most commonly eaten snacks at shopping malls in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What are the most commonly eaten snacks at shopping malls in China?
+答案：",Chocolates and biscuits.,inst-4,0,0
+Al-en-09,What is a popular snack at an amusement park in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a popular snack at an amusement park in China?
+答案：",Kebabs (串烧),inst-4,0,0
+Al-en-16,"At what age do kids start preschool in China? (Provide Arabic numerals (e.g., 12) only.)","阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：At what age do kids start preschool in China? (Provide Arabic numerals (e.g., 12) only.)
+答案：",6,inst-4,0,0
+Al-en-17,What is a popular afterschool sport for elementary schools in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a popular afterschool sport for elementary schools in China?
+答案：",Basketball,inst-4,1,0.5
+Al-en-18,For which subject do elementary students get private education in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：For which subject do elementary students get private education in China?
+答案：",Chinese (Chinese Language),inst-4,1,0.2
+Al-en-19,What is a popular second language for high school students in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a popular second language for high school students in China?
+答案：",English,inst-4,1,1.0
+Al-en-21,Which subject is the most important for gifted education in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Which subject is the most important for gifted education in China?
+答案：",Language Arts (语文),inst-4,0,0
+Al-en-32,What is the main dish for Thanksgiving in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is the main dish for Thanksgiving in China?
+答案：","The main dish for Thanksgiving in China is not traditionally defined as it is in the United States, but it often includes dishes like roast turkey or duck, mashed potatoes, stuffing, and cranberry sauce. However, the specific main dish can vary widely depending on regional cuisine and personal preferences.",inst-4,,
+Al-en-33,What do people do to celebrate Halloween in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What do people do to celebrate Halloween in China?
+答案：","People do not traditionally celebrate Halloween in China, but there has been an increase in Halloween-related activities and costumes in recent years, especially among younger generations.",inst-4,,
+Al-en-34,What do people do to celebrate New Year's Day in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What do people do to celebrate New Year's Day in China?
+答案：","People in China celebrate New Year's Day with various activities such as setting off firecrackers, having family reunions, and enjoying dumplings. However, it's worth noting that the main New Year celebration in China is during the lunar New Year (Chinese New Year), which typically occurs in January or February. The New Year's Day on January 1st is often seen as a continuation of this festival.",inst-4,1,0.5
+Al-en-35,What do people do to celebrate Christmas in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What do people do to celebrate Christmas in China?
+答案：","People in China celebrate Christmas by decorating their homes, exchanging gifts with friends and family, singing Christmas carols, and having Christmas Eve or Christmas dinner parties.",inst-4,0,0
+Al-en-36,What food is associated with Halloween in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What food is associated with Halloween in China?
+答案：",There is no traditional food specifically associated with Halloween in China.,inst-4,,
+Al-en-37,What food is associated with Christmas in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What food is associated with Christmas in China?
+答案：",饺子 (Jiaozi),inst-4,0,0
+Al-en-38,What food is associated with Valentine's day in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What food is associated with Valentine's day in China?
+答案：",巧克力,inst-4,1,1.0
+Al-en-39,What do people eat on their birthday in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What do people eat on their birthday in China?
+答案：",蛋糕,inst-4,1,1.0
+Al-en-40,What is a popular outdoor place for families to have fun with little kids in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a popular outdoor place for families to have fun with little kids in China?
+答案：",Theme parks,inst-4,1,1.0
+Al-en-43,What is a popular indoor activity for families in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is a popular indoor activity for families in China?
+答案：",答案：Playing table tennis (乒乓球),inst-4,0,0
+An-ar-02,Where do university students have lunch in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Where do university students have lunch in China?
+答案：","In China, the location where university students have lunch can vary widely depending on the university and its location, but common options include student canteens (食堂), cafes, and restaurants.",inst-4,1,1.0
+An-ar-03,Which month is the final exam term usually scheduled at high schools in China? (Provide Arabic numerals (1~12) only.),"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Which month is the final exam term usually scheduled at high schools in China? (Provide Arabic numerals (1~12) only.)
+答案：",6,inst-4,1,1.0
+An-ar-08,"How many hours a day do students in China usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)","阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：How many hours a day do students in China usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)
+答案：",8,inst-4,1,0.5
+An-ar-09,"How many languages do students study at high school in China? (Provide Arabic numerals (e.g., 5) only.)","阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：How many languages do students study at high school in China? (Provide Arabic numerals (e.g., 5) only.)
+答案：",12,inst-4,1,1.0
+An-ar-34,What is the most popular sport played in a team at school in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is the most popular sport played in a team at school in China?
+答案：","The most popular sport played in a team at school in China can vary depending on regional preferences and cultural influences, but basketball is generally considered very popular and widely played.",inst-4,1,1.0
+An-ar-35,Who is the most popular sport commentator in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Who is the most popular sport commentator in China?
+答案：","The answer is not explicitly known and can vary based on different surveys and polls, but as of recent data, Cui Yongyuan (崔永元) was once very popular for his sports commentary, particularly for football (soccer). However, it's important to note that popularity can fluctuate over time and may have changed since then.",inst-4,,
+An-ar-36,What is the most popular sport team in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is the most popular sport team in China?
+答案：",答案：这取决于所指的具体体育项目。不同的体育项目有不同的最受欢迎的球队。例如，足球方面可能是广州恒大、北京国安等；篮球方面可能是广东宏远、辽宁本钢等。没有一个统一的答案适用于所有体育项目。,inst-4,1,0.5
+An-ar-43,What are the common places or venues where individuals in China usually gather to watch sports broadcasts?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What are the common places or venues where individuals in China usually gather to watch sports broadcasts?
+答案：",Chinese Super League stadiums,inst-4,0,0
+Ca-sp-05,"How many meals per day do people from China usually have? (Provide Arabic numerals (e.g., 5) only.)","阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：How many meals per day do people from China usually have? (Provide Arabic numerals (e.g., 5) only.)
+答案：",2,inst-4,0,0
+Ca-sp-06,Which is the most important meal of the day to people from China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Which is the most important meal of the day to people from China?
+答案：",早餐,inst-4,1,0.5
+Ca-sp-08,What is the most common ingredient used in China's diet?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is the most common ingredient used in China's diet?
+答案：",rice,inst-4,1,1.0
+Ca-sp-09,What do people from China usually eat for dessert?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What do people from China usually eat for dessert?
+答案：",People from China usually eat fruit for dessert.,inst-4,0,0
+Ca-sp-11,Which day of the week do people usually organize a family meal in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Which day of the week do people usually organize a family meal in China?
+答案：",Saturday,inst-4,,
+Ca-sp-14,Which is the most popular hot drink in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Which is the most popular hot drink in China?
+答案：",Tea,inst-4,1,0.6666666666666666
+Ca-sp-19,What do young people from China usually drink at the night club?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What do young people from China usually drink at the night club?
+答案：",软饮或果汁,inst-4,0,0
+Ca-sp-21,At which month do people usually take holidays in China? (Provide Arabic numerals (1~12) only.),"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：At which month do people usually take holidays in China? (Provide Arabic numerals (1~12) only.)
+答案：",7,inst-4,0,0
+Ca-sp-29,What tradition is there in China for New Year's Eve?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What tradition is there in China for New Year's Eve?
+答案：",Eating reunion dinner,inst-4,0,0
+Ca-sp-38,Which is the typical type of house for a family in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Which is the typical type of house for a family in China?
+答案：","Typical type of house for a family in China varies greatly depending on region and economic conditions, but one common type is the courtyard house (四合院).",inst-4,1,0.2
+Ca-sp-41,Where do the dependent elderly usually live in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Where do the dependent elderly usually live in China?
+答案：",养老院或家中与子女同住。,inst-4,1,0.3333333333333333
+Ca-sp-42,"How long (in weeks) is China's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)","阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：How long (in weeks) is China's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)
+答案：",52,inst-4,1,0.5
+Ca-sp-43,"How long (in weeks) is China's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)","阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：How long (in weeks) is China's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)
+答案：",12,inst-4,,
+Ca-sp-45,What type of destination is commonly chosen for a family vacation in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What type of destination is commonly chosen for a family vacation in China?
+答案：",Beach resorts,inst-4,1,1.0
+Gu-ch-05,What sports do seniors like the most in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What sports do seniors like the most in China?
+答案：",Ping pong (Table Tennis),inst-4,0,0
+Gu-ch-06,What sports do men like to play the most in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What sports do men like to play the most in China?
+答案：","Based on the limited and rapidly evolving data available, men in China's preferences for sports can vary widely but some popular options include basketball, table tennis, badminton, and soccer (association football). However, it's important to note that this is a generalization and actual preferences can differ significantly among different regions, age groups, and individual interests.",inst-4,1,1.0
+Gu-ch-07,Who is the most famous basketball player in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：Who is the most famous basketball player in China?
+答案：",姚明（Yao Ming）,inst-4,1,1.0
+Gu-ch-08,What is the most popular sports among children in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What is the most popular sports among children in China?
+答案：","The most popular sport among children in China varies by region and demographic, but basketball and football (soccer) are among the most widely played and popular among children.",inst-4,1,1.0
+Gu-ch-09,What sports do women like to play the most in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What sports do women like to play the most in China?
+答案：","Based on recent data and trends, women's favorite sports in China include badminton, table tennis, and volleyball. However, it's important to note that preferences can vary widely and may change over time.",inst-4,1,1.0
+Gu-ch-11,What sports event has China won the most gold medals at the Olympics?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What sports event has China won the most gold medals at the Olympics?
+答案：",China has won the most gold medals at the Olympics.,inst-4,0,0
+Gu-ch-15,What sports do male students in university like to play the most in China?,"阅读以下问题并仅提供一个答案，无需任何解释。
+
+问题：What sports do male students in university like to play the most in China?
+答案：","The answer is not definitively known and can vary significantly based on different universities and regions in China, so I cannot provide a single, definitive answer without more specific data.",inst-4,0,0

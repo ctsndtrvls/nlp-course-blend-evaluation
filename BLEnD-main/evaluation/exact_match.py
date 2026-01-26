@@ -31,16 +31,10 @@ except ImportError:
 # pip install nlp-id
 try:
     from nlp_id.lemmatizer import Lemmatizer as IDLemmatizer
-<<<<<<< Updated upstream
     IDLEMMATIZER_AVAILABLE = True
 except ImportError:
     IDLEMMATIZER_AVAILABLE = False
     IDLemmatizer = None
-=======
-except ImportError:
-    IDLemmatizer = None
-
->>>>>>> Stashed changes
 
 # pip install hazm
 try:
