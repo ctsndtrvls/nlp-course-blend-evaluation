@@ -23,7 +23,7 @@ parser.add_argument('--id_col',type=str,default="ID",
                     help='Provide the column name from the given csv file name with question IDs.')
 parser.add_argument('--output_dir',type=str,default='./model_inference_results',
                     help='Provide the directory for the output files to be saved.')
-parser.add.argument('--output_file',type=str,default=None,
+parser.add_argument('--output_file',type=str,default=None,
                     help='Provide the name of the output file.')
 parser.add_argument('--model_cache_dir',type=str,default='.cache',
                     help='Provide the directory saving model caches.')
@@ -46,7 +46,7 @@ def make_prompt(question,prompt_no,language,country,prompt_sheet):
 
     return prompt.replace('{q}',question)
 
-def generate_response(model_name,model_path,tokenizer,model,language,country,q_df,q_col,id_col,output_dir,prompt_no=None):
+def generate_response(model_name,model_path,tokenizer,model,language,country,q_df,q_col,id_col,output_dir,prompt_no=None,prompt_sheet=None):
     replace_country_flag = False
     if language != COUNTRY_LANG[country] and language == 'English':
         replace_country_flag = True
@@ -58,7 +58,16 @@ def generate_response(model_name,model_path,tokenizer,model,language,country,q_d
             q_col = 'Question'
     
     if prompt_no is not None:
-        prompt_sheet = import_google_sheet(PROMPT_SHEET_ID,PROMPT_COUNTRY_SHEET[country])
+        if prompt_sheet is None:
+            # Load prompts from local CSV file
+            if args.prompt_dir and args.prompt_file:
+                prompt_file_path = os.path.join(args.prompt_dir, args.prompt_file)
+            else:
+                prompt_file_path = os.path.join('../data/prompts', f'{country}_prompts.csv')
+            if os.path.exists(prompt_file_path):
+                prompt_sheet = pd.read_csv(prompt_file_path, encoding='utf-8')
+            else:
+                raise FileNotFoundError(f"Prompt file not found: {prompt_file_path}")
         output_filename = os.path.join(output_dir,f"{model_name}-{country}_{language}_{prompt_no}_result.csv")
     else:
         output_filename = os.path.join(output_dir,f"{model_name}-{country}_{language}_result.csv")
@@ -115,8 +124,6 @@ def get_response_from_all():
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
     
-    if args.gpus:
-        os.environ['CUDA_VISIBLE_DEVICES'] = args.gpus
     
     if ',' in languages:
         languages = languages.split(',')
@@ -133,9 +140,17 @@ def get_response_from_all():
             exit()
         
     def get_questions(language,country):
-        questions_df = pd.read_csv(os.path.join(question_dir,f'{country}_full_final_questions.csv'),encoding='utf-8')
-
-        return questions_df
+        # Try different possible filenames
+        possible_files = [
+            os.path.join(question_dir, f'{country}_full_final_questions.csv'),
+            os.path.join(question_dir, f'{country}_questions.csv'),
+            os.path.join(question_dir, question_file) if question_file else None
+        ]
+        for file_path in possible_files:
+            if file_path and os.path.exists(file_path):
+                questions_df = pd.read_csv(file_path, encoding='utf-8')
+                return questions_df
+        raise FileNotFoundError(f"Question file not found for country {country}. Tried: {possible_files}")
     
     
     def generate_response_per_model(model_name):
@@ -143,14 +158,33 @@ def get_response_from_all():
         
         tokenizer,model = get_tokenizer_model(model_name,model_path,args.model_cache_dir)
         
+        # Load prompt sheet once if needed
+        prompt_sheet = None
+        if prompt_no is not None:
+            if isinstance(countries, str):
+                country_for_prompt = countries
+            else:
+                country_for_prompt = countries[0] if countries else None
+            if country_for_prompt:
+                if args.prompt_dir and args.prompt_file:
+                    prompt_file_path = os.path.join(args.prompt_dir, args.prompt_file)
+                else:
+                    prompt_file_path = os.path.join(question_dir.replace('questions', 'prompts'), f'{country_for_prompt}_prompts.csv')
+                if os.path.exists(prompt_file_path):
+                    prompt_sheet = pd.read_csv(prompt_file_path, encoding='utf-8')
+        
         if isinstance(languages,str):
-            
             questions = get_questions(languages,countries)
-            generate_response(model_name,model_path,tokenizer,model,languages,countries,questions,question_col,id_col,output_dir,prompt_no=prompt_no)
+            generate_response(model_name,model_path,tokenizer,model,languages,countries,questions,question_col,id_col,output_dir,prompt_no=prompt_no,prompt_sheet=prompt_sheet)
         else:
             for l,c in zip(languages,countries):
                 questions = get_questions(l,c)
-                generate_response(model_name,model_path,tokenizer,model,l,c,questions,question_col,id_col,output_dir,prompt_no=prompt_no)
+                # Load prompt sheet for this country
+                if prompt_no is not None and prompt_sheet is None:
+                    prompt_file_path = os.path.join(question_dir.replace('questions', 'prompts'), f'{c}_prompts.csv')
+                    if os.path.exists(prompt_file_path):
+                        prompt_sheet = pd.read_csv(prompt_file_path, encoding='utf-8')
+                generate_response(model_name,model_path,tokenizer,model,l,c,questions,question_col,id_col,output_dir,prompt_no=prompt_no,prompt_sheet=prompt_sheet)
         
     if isinstance(models,str):
        generate_response_per_model(models)

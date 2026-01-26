@@ -10,7 +10,11 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 from tqdm.auto import tqdm
-from easydict import EasyDict
+try:
+    from easydict import EasyDict
+except ImportError:
+    # EasyDict is optional, use regular dict if not available
+    EasyDict = dict
 from collections import defaultdict, Counter
 import pathlib
 import textwrap
@@ -21,19 +25,45 @@ import openai
 from openai import AzureOpenAI,OpenAI
 from transformers import T5Tokenizer, T5ForConditionalGeneration, AutoModelForCausalLM, AutoModelForSeq2SeqLM, AutoTokenizer, LlamaTokenizer, pipeline, AutoConfig, BitsAndBytesConfig
 from transformers.generation.utils import GenerationConfig
-from peft import PeftModel, PeftConfig
+try:
+    from peft import PeftModel, PeftConfig
+except ImportError:
+    # peft is optional, only needed for certain models like 'mala'
+    PeftModel = None
+    PeftConfig = None
 import torch
-import anthropic
+try:
+    import anthropic
+    from anthropic import HUMAN_PROMPT, AI_PROMPT
+except ImportError:
+    # anthropic is optional, only needed for Claude models
+    anthropic = None
+    HUMAN_PROMPT = None
+    AI_PROMPT = None
 from typing import Union
-import google.generativeai as genai
-from google.generativeai.types import safety_types
-from google.oauth2 import service_account
-import vertexai
-from vertexai.language_models import TextGenerationModel
-import anthropic
-from anthropic import HUMAN_PROMPT, AI_PROMPT
-import cohere
-from together import Together
+try:
+    import google.generativeai as genai
+    from google.generativeai.types import safety_types
+    from google.oauth2 import service_account
+    import vertexai
+    from vertexai.language_models import TextGenerationModel
+except ImportError:
+    # google libraries are optional, only needed for Gemini/Palm models
+    genai = None
+    safety_types = None
+    service_account = None
+    vertexai = None
+    TextGenerationModel = None
+try:
+    import cohere
+except ImportError:
+    # cohere is optional, only needed for Cohere models
+    cohere = None
+try:
+    from together import Together
+except ImportError:
+    # together is optional, only needed for Together API models
+    Together = None
 
 MODEL_PATHS = {
     "gpt-3.5-turbo-0125":"gpt-3.5-turbo-0125",
@@ -49,6 +79,7 @@ MODEL_PATHS = {
     'Qwen1.5-72B-Chat':'Qwen/Qwen1.5-72B-Chat',
     'Qwen1.5-14B-Chat':'Qwen/Qwen1.5-14B-Chat' ,
     'Qwen1.5-32B-Chat':'Qwen/Qwen1.5-32B-Chat' ,
+    'Qwen2.5-3B-Instruct':'Qwen/Qwen2.5-3B-Instruct', 
     'text-bison-002':'text-bison@002',
     'c4ai-command-r-v01':'CohereForAI/c4ai-command-r-v01',
     'c4ai-command-r-plus':'command-r-plus',
@@ -82,7 +113,12 @@ COUNTRY_LANG = {
 def get_tokenizer_model(model_name,model_path,model_cache_dir):
     tokenizer,model = None,None
     
-    if 'gpt' not in model_name and 'gemini' not in model_name and 'claude' not in model_name and 'bison' not in model_name and 'command' not in model_name and 'Qwen' not in model_name:
+    # Check if it's a cloud API model or local Qwen model
+    is_cloud_model = ('gpt' in model_name or 'gemini' in model_name or 'claude' in model_name or 
+                     'bison' in model_name or 'command' in model_name or 
+                     ('Qwen' in model_name and '3B' not in model_name))  # Qwen 3B runs locally, others use Together API
+    
+    if not is_cloud_model:
         if 'llama' in model_name.lower():
             tokenizer = LlamaTokenizer.from_pretrained(model_path, use_fast=False,token=os.getenv("HF_TOKEN"))
             model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", 
@@ -108,6 +144,8 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
                                                                     cache_dir=os.path.join(model_cache_dir,model_path))
             
         elif 'mala' in model_name.lower():
+            if PeftModel is None:
+                raise ImportError("peft library is required for 'mala' model. Install it with: pip install peft")
             base_model = AutoModelForCausalLM.from_pretrained('meta-llama/Llama-2-7b-hf',token=os.getenv("HF_TOKEN"), device_map="auto",
                                                                 cache_dir=os.path.join(model_cache_dir,model_path))
             base_model.resize_token_embeddings(260164)
@@ -137,6 +175,18 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
                                                          trust_remote_code=True,
                                                          resume_download=True,
                                                          cache_dir=os.path.join(model_cache_dir,model_path))
+        
+        elif 'Qwen' in model_path and '3B' in model_path:
+            # Local Qwen 3B model (for Mac M1)
+            tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
+            model = AutoModelForCausalLM.from_pretrained(
+                model_path,
+                device_map="auto",
+                torch_dtype=torch.float16,  # Use float16 for better memory efficiency on M1
+                trust_remote_code=True,
+                resume_download=True,
+                cache_dir=os.path.join(model_cache_dir, model_path)
+            )
          
         else:
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
@@ -200,7 +250,8 @@ def get_together_response(
     max_try=10,
     dialogue_history=None
 ):
-
+    if Together is None:
+        raise ImportError("together library is required. Install it with: pip install together")
     client = Together(api_key=os.getenv("TOGETHER_API_KEY"))
     n_try = 0
     while True:
@@ -246,7 +297,8 @@ def get_cohere_response(
     max_try=10,
     dialogue_history=None
 ):
-    
+    if cohere is None:
+        raise ImportError("cohere library is required. Install it with: pip install cohere")
     co = cohere.Client(os.getenv("COHERE_API_KEY"))
     
     n_try = 0
@@ -411,6 +463,8 @@ def inference_azure(prompt,model_name,temperature=0,top_p=1,max_attempt=10):
     return res.strip()
 
 def inference_claude(prompt,temperature=0,top_p=1,model_name="culture-gpt-4-1106-Preview",max_attempt=10):
+    if anthropic is None:
+        raise ImportError("anthropic library is required. Install it with: pip install anthropic")
     c =  anthropic.Anthropic(api_key=os.getenv('CLAUDE_API_KEY'))    
     
     attempt = 0
@@ -469,7 +523,7 @@ def model_inference(prompt,model_path,model,tokenizer,max_length=512):
         result = tokenizer.decode(outputs[0], skip_special_tokens=True)
     
     elif 'Qwen' in model_path:
-        messages = messages = [{"role": "user", "content": prompt}]
+        messages = [{"role": "user", "content": prompt}]
         text = tokenizer.apply_chat_template(
             messages,
             tokenize=False,
@@ -586,7 +640,8 @@ def get_gemini_response(prompt,model_name,
     top_p=1.0,
     greedy=False,
     max_attempt=10,):
-    
+    if genai is None:
+        raise ImportError("google-generativeai library is required. Install it with: pip install google-generativeai")
     GOOGLE_API_KEY=os.getenv('GOOGLE_API_KEY')
     genai.configure(api_key=GOOGLE_API_KEY)
     
@@ -771,8 +826,12 @@ def get_model_response(model_name,prompt,model,tokenizer,temperature,top_p,gpt_a
         response = inference_claude(prompt,model_name=model_name,temperature=temperature,top_p=top_p)
     elif 'command' in model_name:
         response = get_cohere_response(prompt,model_name=model_name,temperature=temperature,top_p=top_p)
-    elif 'Qwen' in model_name:
+    elif 'Qwen' in model_name and '3B' not in model_name:
+        # Large Qwen models use Together API
         response = get_together_response(prompt,model_name=model_name,temperature=temperature,top_p=top_p)
+    elif 'Qwen' in model_name and '3B' in model_name:
+        # Local Qwen 3B model
+        response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)
     else:
         response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)
             
