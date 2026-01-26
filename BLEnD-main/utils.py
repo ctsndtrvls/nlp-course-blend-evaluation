@@ -647,12 +647,37 @@ def model_inference(prompt,model_path,model,tokenizer,max_length=512):
     
     elif 'mt5' in model_path.lower() or ('t5' in model_path.lower() and 'mt5' not in model_path.lower()):
         # mT5/T5 models use encoder-decoder architecture
-        # Format prompt for T5 (add prefix if needed)
-        if not prompt.startswith('answer:') and not prompt.startswith('question:'):
-            # T5 models work better with task prefixes
-            formatted_prompt = f"question: {prompt} answer:"
+        # T5 models need a simple format: "question: {question} answer:"
+        # Extract the actual question from the prompt if it contains instructions
+        
+        # Try to extract question from common prompt patterns
+        question_text = prompt
+        
+        # Pattern 1: "Pregunta: {question}" or "Question: {question}" or "问题：" (Chinese)
+        pregunta_match = re.search(r'(?:Pregunta|Question|问题)[：:]\s*(.+?)(?:\n|Respuesta|Answer|答案|$)', prompt, re.IGNORECASE | re.DOTALL)
+        if pregunta_match:
+            question_text = pregunta_match.group(1).strip()
         else:
-            formatted_prompt = prompt
+            # Pattern 2: Look for question mark (including Chinese question mark ？) and extract sentence before it
+            # Or if prompt already starts with question format, use it
+            if 'question:' in prompt.lower() or 'pregunta:' in prompt.lower() or '问题' in prompt:
+                # Extract text after "question:", "pregunta:", or "问题"
+                match = re.search(r'(?:question|pregunta|问题)[：:]\s*(.+?)(?:\n|answer|respuesta|答案|$)', prompt, re.IGNORECASE | re.DOTALL)
+                if match:
+                    question_text = match.group(1).strip()
+            # If no pattern found, try to extract the last sentence (likely the question)
+            # Check for both English (?) and Chinese (？) question marks
+            elif '?' in prompt or '？' in prompt:
+                # Find the sentence with question mark
+                # Split by both English and Chinese punctuation
+                sentences = re.split(r'[.!?。！？]\s*', prompt)
+                for sent in reversed(sentences):
+                    if '?' in sent or '？' in sent:
+                        question_text = sent.strip()
+                        break
+        
+        # Format for T5: simple "question: {question} answer:"
+        formatted_prompt = f"question: {question_text} answer:"
         
         input_ids = tokenizer(formatted_prompt, return_tensors="pt", padding=True, truncation=True, max_length=512).input_ids.to(model.device)
         
@@ -662,13 +687,17 @@ def model_inference(prompt,model_path,model,tokenizer,max_length=512):
                 max_length=max_length,
                 num_beams=4,
                 early_stopping=True,
-                no_repeat_ngram_size=2
+                no_repeat_ngram_size=2,
+                do_sample=False  # Use deterministic generation
             )
         
         result = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
-        # Remove the prompt from result if it's included
-        if formatted_prompt.lower() in result.lower():
-            result = result.replace(formatted_prompt, "").strip()
+        
+        # Clean up result - remove any prompt remnants
+        result = result.strip()
+        # Remove "answer:" prefix if present
+        if result.lower().startswith('answer:'):
+            result = result[7:].strip()
     
     else:
         input_ids = tokenizer(prompt, return_tensors="pt", return_token_type_ids=False).to(model.device)
