@@ -1,0 +1,51 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Model cache (large files - should not be committed)
+.cache/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Model inference results (optional - uncomment if you don't want to commit results)
+# model_inference_results/
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints
+
+# Temporary files
+*.tmp
+*.log
+*.lock
+
+# Google Sheets temporary files
+google_sheet_tmp.csv

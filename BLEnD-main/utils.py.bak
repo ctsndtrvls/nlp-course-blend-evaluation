@@ -79,9 +79,7 @@ MODEL_PATHS = {
     'Qwen1.5-72B-Chat':'Qwen/Qwen1.5-72B-Chat',
     'Qwen1.5-14B-Chat':'Qwen/Qwen1.5-14B-Chat' ,
     'Qwen1.5-32B-Chat':'Qwen/Qwen1.5-32B-Chat' ,
-    'Qwen2.5-3B-Instruct':'Qwen/Qwen2.5-3B-Instruct',
-    'mt5-small':'google/mt5-small',  # Multilingual T5 - encoder-decoder model
-    't5-small':'google-t5/t5-small',  # English-only T5 - encoder-decoder model
+    'Qwen2.5-3B-Instruct':'Qwen/Qwen2.5-3B-Instruct', 
     'text-bison-002':'text-bison@002',
     'c4ai-command-r-v01':'CohereForAI/c4ai-command-r-v01',
     'c4ai-command-r-plus':'command-r-plus',
@@ -119,7 +117,6 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
     is_cloud_model = ('gpt' in model_name or 'gemini' in model_name or 'claude' in model_name or 
                      'bison' in model_name or 'command' in model_name or 
                      ('Qwen' in model_name and '3B' not in model_name))  # Qwen 3B runs locally, others use Together API
-    # Note: mT5/T5 models are local encoder-decoder models, not cloud
     
     if not is_cloud_model:
         if 'llama' in model_name.lower():
@@ -187,22 +184,6 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
                 device_map="auto",
                 torch_dtype=torch.float16,  # Use float16 for better memory efficiency on M1
                 trust_remote_code=True,
-                resume_download=True,
-                cache_dir=os.path.join(model_cache_dir, model_path)
-            )
-        
-        elif 'mt5' in model_path.lower() or 't5' in model_path.lower():
-            # mT5/T5 models are encoder-decoder (Seq2Seq)
-            # Use AutoTokenizer instead of T5Tokenizer for better compatibility
-            try:
-                tokenizer = T5Tokenizer.from_pretrained(model_path)
-            except ImportError:
-                # Fallback to AutoTokenizer if SentencePiece not available
-                tokenizer = AutoTokenizer.from_pretrained(model_path)
-            model = T5ForConditionalGeneration.from_pretrained(
-                model_path,
-                device_map="auto",
-                torch_dtype=torch.float16,  # Use float16 for better memory efficiency
                 resume_download=True,
                 cache_dir=os.path.join(model_cache_dir, model_path)
             )
@@ -646,60 +627,6 @@ def model_inference(prompt,model_path,model,tokenizer,max_length=512):
             generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=True
         )[0]
     
-    elif 'mt5' in model_path.lower() or ('t5' in model_path.lower() and 'mt5' not in model_path.lower()):
-        # mT5/T5 models use encoder-decoder architecture
-        # T5 models need a simple format: "question: {question} answer:"
-        # Extract the actual question from the prompt if it contains instructions
-        
-        # Try to extract question from common prompt patterns
-        question_text = prompt
-        
-        # Pattern 1: "Pregunta: {question}" or "Question: {question}" or "问题：" (Chinese)
-        pregunta_match = re.search(r'(?:Pregunta|Question|问题)[：:]\s*(.+?)(?:\n|Respuesta|Answer|答案|$)', prompt, re.IGNORECASE | re.DOTALL)
-        if pregunta_match:
-            question_text = pregunta_match.group(1).strip()
-        else:
-            # Pattern 2: Look for question mark (including Chinese question mark ？) and extract sentence before it
-            # Or if prompt already starts with question format, use it
-            if 'question:' in prompt.lower() or 'pregunta:' in prompt.lower() or '问题' in prompt:
-                # Extract text after "question:", "pregunta:", or "问题"
-                match = re.search(r'(?:question|pregunta|问题)[：:]\s*(.+?)(?:\n|answer|respuesta|答案|$)', prompt, re.IGNORECASE | re.DOTALL)
-                if match:
-                    question_text = match.group(1).strip()
-            # If no pattern found, try to extract the last sentence (likely the question)
-            # Check for both English (?) and Chinese (？) question marks
-            elif '?' in prompt or '？' in prompt:
-                # Find the sentence with question mark
-                # Split by both English and Chinese punctuation
-                sentences = re.split(r'[.!?。！？]\s*', prompt)
-                for sent in reversed(sentences):
-                    if '?' in sent or '？' in sent:
-                        question_text = sent.strip()
-                        break
-        
-        # Format for T5: simple "question: {question} answer:"
-        formatted_prompt = f"question: {question_text} answer:"
-        
-        input_ids = tokenizer(formatted_prompt, return_tensors="pt", padding=True, truncation=True, max_length=512).input_ids.to(model.device)
-        
-        with torch.no_grad():
-            generated_ids = model.generate(
-                input_ids,
-                max_length=max_length,
-                num_beams=4,
-                early_stopping=True,
-                no_repeat_ngram_size=2,
-                do_sample=False  # Use deterministic generation
-            )
-        
-        result = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
-        
-        # Clean up result - remove any prompt remnants
-        result = result.strip()
-        # Remove "answer:" prefix if present
-        if result.lower().startswith('answer:'):
-            result = result[7:].strip()
-    
     else:
         input_ids = tokenizer(prompt, return_tensors="pt", return_token_type_ids=False).to(model.device)
         outputs = model.generate(**input_ids,max_length=max_length)
@@ -904,9 +831,6 @@ def get_model_response(model_name,prompt,model,tokenizer,temperature,top_p,gpt_a
         response = get_together_response(prompt,model_name=model_name,temperature=temperature,top_p=top_p)
     elif 'Qwen' in model_name and '3B' in model_name:
         # Local Qwen 3B model
-        response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)
-    elif 'mt5' in model_name.lower() or 't5' in model_name.lower():
-        # mT5/T5 models (encoder-decoder)
         response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)
     else:
         response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)

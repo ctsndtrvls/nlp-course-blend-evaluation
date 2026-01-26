@@ -1,41 +1,102 @@
 from evaluation_utils import *
 
 import unicodedata as ud
-
-# pip install konlpy
-from konlpy.tag import Okt
-
-# pip install hausastemmer
-import hausastemmer
-
-# git clone https://github.com/aznlp-disc/stemmer.git, cp word.txt & suffix.txt.
-from stemmer.stemmer import Stemmer as AZStemmer
 from string import punctuation
 
+# Make language-specific imports optional
+# pip install konlpy
+try:
+    from konlpy.tag import Okt
+    KONLPY_AVAILABLE = True
+except ImportError:
+    KONLPY_AVAILABLE = False
+    Okt = None
+
+# pip install hausastemmer
+try:
+    import hausastemmer
+    HAUSASTEMMER_AVAILABLE = True
+except ImportError:
+    HAUSASTEMMER_AVAILABLE = False
+    hausastemmer = None
+
+# git clone https://github.com/aznlp-disc/stemmer.git, cp word.txt & suffix.txt.
+try:
+    from stemmer.stemmer import Stemmer as AZStemmer
+    AZSTEMMER_AVAILABLE = True
+except ImportError:
+    AZSTEMMER_AVAILABLE = False
+    AZStemmer = None
+
 # pip install nlp-id
-from nlp_id.lemmatizer import Lemmatizer as IDLemmatizer
+try:
+    from nlp_id.lemmatizer import Lemmatizer as IDLemmatizer
+<<<<<<< Updated upstream
+    IDLEMMATIZER_AVAILABLE = True
+except ImportError:
+    IDLEMMATIZER_AVAILABLE = False
+    IDLemmatizer = None
+=======
+except ImportError:
+    IDLemmatizer = None
+
+>>>>>>> Stashed changes
 
 # pip install hazm
-from hazm import Lemmatizer as PRLemmatizer
+try:
+    from hazm import Lemmatizer as PRLemmatizer
+    PRLEMMATIZER_AVAILABLE = True
+except ImportError:
+    PRLEMMATIZER_AVAILABLE = False
+    PRLemmatizer = None
 
 # pip install qalsadi
-from qalsadi.lemmatizer import Lemmatizer as ARLeammatizer
+try:
+    from qalsadi.lemmatizer import Lemmatizer as ARLeammatizer
+    ARLEMMATIZER_AVAILABLE = True
+except ImportError:
+    ARLEMMATIZER_AVAILABLE = False
+    ARLeammatizer = None
 
 # pip install cltk
-from cltk import NLP
+try:
+    from cltk import NLP
+    CLTK_AVAILABLE = True
+except ImportError:
+    CLTK_AVAILABLE = False
+    NLP = None
 
 # !pip install spark-nlp==5.3.3 pyspark==3.3.1
-from sparknlp.base import *
-from sparknlp.annotator import *
-from sparknlp.pretrained import PretrainedPipeline
-import sparknlp
+try:
+    from sparknlp.base import *
+    from sparknlp.annotator import *
+    from sparknlp.pretrained import PretrainedPipeline
+    import sparknlp
+    SPARKNLP_AVAILABLE = True
+except ImportError:
+    SPARKNLP_AVAILABLE = False
 
-from SUSTEM.SUSTEM_S import *
+# SUSTEM for Sundanese
+try:
+    from SUSTEM.SUSTEM_S import *
+    SUSTEM_AVAILABLE = True
+except ImportError:
+    SUSTEM_AVAILABLE = False
 
-import spacy
+try:
+    import spacy
+    SPACY_AVAILABLE = True
+except ImportError:
+    SPACY_AVAILABLE = False
+    spacy = None
 
 # pip install jieba
-import jieba
+try:
+    import jieba
+    JIEBA_AVAILABLE = True
+except ImportError:
+    JIEBA_AVAILABLE = False
+    jieba = None
 
 # git clone https://github.com/anoopkunchukuttan/indic_nlp_library.git & https://github.com/anoopkunchukuttan/indic_nlp_resources.git
 # The path to the local git repo for Indic NLP library
@@ -44,10 +105,15 @@ INDIC_NLP_LIB_HOME=os.path.abspath("./indic_nlp_library")
 # The path to the local git repo for Indic NLP Resources
 INDIC_NLP_RESOURCES=os.path.abspath("./indic_nlp_resources")
 
-sys.path.append(INDIC_NLP_LIB_HOME)
-from indicnlp import common
-from indicnlp import loader
-from indicnlp.tokenize import indic_tokenize  
+INDICNLP_AVAILABLE = False
+try:
+    sys.path.append(INDIC_NLP_LIB_HOME)
+    from indicnlp import common
+    from indicnlp import loader
+    from indicnlp.tokenize import indic_tokenize
+    INDICNLP_AVAILABLE = True
+except (ImportError, OSError):
+    INDICNLP_AVAILABLE = False  
 
 
 
@@ -56,11 +122,15 @@ def lemma_check(answer,llm_response,nlp_pipeline,language='Korean'):
         return True
     
     if language == 'Korean':
+        if not KONLPY_AVAILABLE:
+            return False  # Cannot process Korean without konlpy
         okt = Okt()
         answer_tokens = okt.morphs(' '.join([w for w,p in okt.pos(answer) if p!='Josa']),stem=True)
         llm_tokens = okt.morphs(' '.join([w for w,p in okt.pos(llm_response) if p!='Josa']),stem=True)
         
     elif language == 'Hausa':
+        if not HAUSASTEMMER_AVAILABLE:
+            return False  # Cannot process Hausa without hausastemmer
         answer_tokens = [hausastemmer.stem(term.strip('-')) for term in answer.split()]
         llm_tokens = [hausastemmer.stem(term.strip('-')) for term in llm_response.split()]
     
@@ -69,6 +139,8 @@ def lemma_check(answer,llm_response,nlp_pipeline,language='Korean'):
         llm_tokens = [token.result if lemma.result.startswith('_') else lemma.result for token,lemma in zip(nlp_pipeline.fullAnnotate(llm_response)[0]['lemma'],nlp_pipeline.fullAnnotate(llm_response)[0]['token'])]
         
     elif language == 'Azerbaijani':
+        if not AZSTEMMER_AVAILABLE:
+            return False  # Cannot process Azerbaijani without AZStemmer
         # Instantiate Stemmer object
         my_stemmer = AZStemmer()
         
@@ -91,16 +163,22 @@ def lemma_check(answer,llm_response,nlp_pipeline,language='Korean'):
         llm_tokens = stem_words(llm_response)
     
     elif language == 'Indonesian':
+        if not IDLEMMATIZER_AVAILABLE:
+            return False  # Cannot process Indonesian without IDLemmatizer
         lemmatizer = IDLemmatizer() 
         answer_tokens = lemmatizer.lemmatize(answer).split()
         llm_tokens = lemmatizer.lemmatize(llm_response).split() 
     
     elif language == 'Persian':
+        if not PRLEMMATIZER_AVAILABLE:
+            return False  # Cannot process Persian without PRLemmatizer
         lemmatizer = PRLemmatizer()
         answer_tokens = [lemmatizer.lemmatize(term) for term in answer.split()]
         llm_tokens = [lemmatizer.lemmatize(term) for term in llm_response.split()]
         
     elif language == 'Arabic':
+        if not ARLEMMATIZER_AVAILABLE:
+            return False  # Cannot process Arabic without ARLeammatizer
         lemmatizer = ARLeammatizer()
         answer_tokens = lemmatizer.lemmatize(answer)
         llm_tokens = lemmatizer.lemmatize(llm_response) 
@@ -111,8 +189,13 @@ def lemma_check(answer,llm_response,nlp_pipeline,language='Korean'):
         llm_tokens = cltk_nlp.analyze(text=llm_response).lemmata
         
     elif language == 'Spanish':
-        answer_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(answer)[0]['lemma']]
-        llm_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(llm_response)[0]['lemma']]
+        if nlp_pipeline is not None and SPARKNLP_AVAILABLE:
+            answer_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(answer)[0]['lemma']]
+            llm_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(llm_response)[0]['lemma']]
+        else:
+            # Fall back to simple word matching if SparkNLP not available
+            answer_tokens = answer.lower().split()
+            llm_tokens = llm_response.lower().split()
         
     elif language == 'Sundanese':
         stemmer = EcsStemmer()
@@ -121,10 +204,17 @@ def lemma_check(answer,llm_response,nlp_pipeline,language='Korean'):
 
         
     elif language == 'English':
-        answer_tokens = [token.lemma_ for token in nlp_pipeline(answer)]
-        llm_tokens = [token.lemma_ for token in nlp_pipeline(llm_response)]
+        if not SPACY_AVAILABLE or nlp_pipeline is None:
+            # Fall back to simple word matching if spacy not available
+            answer_tokens = answer.lower().split()
+            llm_tokens = llm_response.lower().split()
+        else:
+            answer_tokens = [token.lemma_ for token in nlp_pipeline(answer)]
+            llm_tokens = [token.lemma_ for token in nlp_pipeline(llm_response)]
         
     elif language == 'Chinese':
+        if not JIEBA_AVAILABLE:
+            return False  # Cannot process Chinese without jieba
         answer_tokens = list(jieba.cut(answer))
         llm_tokens = list(jieba.cut(llm_response))
         
@@ -176,22 +266,31 @@ def soft_exact_match(country,language,annotation_dict,response_df,id_col,r_col,a
     valid_question_cnt = 0
     
     if language == 'Spanish':
-        spark = sparknlp.start()
-        
-        document_assembler = DocumentAssembler() \
-            .setInputCol("text") \
-            .setOutputCol("document")
-
-        tokenizer = Tokenizer() \
-            .setInputCols(["document"]) \
-            .setOutputCol("token")
-
-        lemmatizer = LemmatizerModel.pretrained("lemma", "es") \
-                .setInputCols(["token"]) \
-                .setOutputCol("lemma")
+        if SPARKNLP_AVAILABLE:
+            try:
+                spark = sparknlp.start()
                 
-        nlp_pipeline = Pipeline(stages=[document_assembler, tokenizer, lemmatizer])
-        nlpPipeline = LightPipeline(nlp_pipeline.fit(spark.createDataFrame([['']]).toDF('text')))
+                document_assembler = DocumentAssembler() \
+                    .setInputCol("text") \
+                    .setOutputCol("document")
+
+                tokenizer = Tokenizer() \
+                    .setInputCols(["document"]) \
+                    .setOutputCol("token")
+
+                lemmatizer = LemmatizerModel.pretrained("lemma", "es") \
+                        .setInputCols(["token"]) \
+                        .setOutputCol("lemma")
+                        
+                nlp_pipeline = Pipeline(stages=[document_assembler, tokenizer, lemmatizer])
+                nlpPipeline = LightPipeline(nlp_pipeline.fit(spark.createDataFrame([['']]).toDF('text')))
+            except Exception as e:
+                print(f"Warning: Could not initialize SparkNLP for Spanish: {e}")
+                print("Falling back to simple word matching for Spanish")
+                nlpPipeline = None
+        else:
+            print("Warning: SparkNLP not available. Using simple word matching for Spanish")
+            nlpPipeline = None
     
     elif language == 'Amharic':
         spark = sparknlp.start()
@@ -214,7 +313,17 @@ def soft_exact_match(country,language,annotation_dict,response_df,id_col,r_col,a
     else:
         nlpPipeline = None
         
-    en_lemmatizer = spacy.load("en_core_web_sm")
+    # Load English lemmatizer if available
+    if SPACY_AVAILABLE:
+        try:
+            en_lemmatizer = spacy.load("en_core_web_sm")
+        except (OSError, IOError):
+            # Model not installed, use None
+            en_lemmatizer = None
+            print("Warning: en_core_web_sm model not found. English evaluation will use simple word matching.")
+    else:
+        en_lemmatizer = None
+        print("Warning: spacy not available. English evaluation will use simple word matching.")
         
     response_df['binary_score'] = [None]*response_df.shape[0]
     response_df['weight_score'] = [None]*response_df.shape[0]

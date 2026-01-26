@@ -1,0 +1,401 @@
+ID,Translation,prompt,response,prompt_no,binary_score,weight_score
+Al-en-01,What is a common snack for preschool kids in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a common snack for preschool kids in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-02,What is a popular food to go with beer in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular food to go with beer in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-04,What is the most popular fruit in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular fruit in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-06,What is a common school cafeteria food in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a common school cafeteria food in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-08,What are the most commonly eaten snacks at shopping malls in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What are the most commonly eaten snacks at shopping malls in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,1,0.3333333333333333
+Al-en-09,What is a popular snack at an amusement park in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular snack at an amusement park in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-16,"At what age do kids start preschool in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: At what age do kids start preschool in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-17,What is a popular afterschool sport for elementary schools in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular afterschool sport for elementary schools in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-18,For which subject do elementary students get private education in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: For which subject do elementary students get private education in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-19,What is a popular second language for high school students in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular second language for high school students in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-21,Which subject is the most important for gifted education in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which subject is the most important for gifted education in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-32,What is the main dish for Thanksgiving in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the main dish for Thanksgiving in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,,
+Al-en-33,What do people do to celebrate Halloween in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people do to celebrate Halloween in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-34,What do people do to celebrate New Year's Day in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people do to celebrate New Year's Day in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-35,What do people do to celebrate Christmas in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people do to celebrate Christmas in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-36,What food is associated with Halloween in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What food is associated with Halloween in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-37,What food is associated with Christmas in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What food is associated with Christmas in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-38,What food is associated with Valentine's day in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What food is associated with Valentine's day in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-39,What do people eat on their birthday in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people eat on their birthday in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-40,What is a popular outdoor place for families to have fun with little kids in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular outdoor place for families to have fun with little kids in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Al-en-43,What is a popular indoor activity for families in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular indoor activity for families in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-02,Where do university students have lunch in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Where do university students have lunch in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-03,Which month is the final exam term usually scheduled at high schools in Mexico? (Provide Arabic numerals (1~12) only.),"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which month is the final exam term usually scheduled at high schools in Mexico? (Provide Arabic numerals (1~12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-08,"How many hours a day do students in Mexico usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many hours a day do students in Mexico usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-09,"How many languages do students study at high school in Mexico? (Provide Arabic numerals (e.g., 5) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many languages do students study at high school in Mexico? (Provide Arabic numerals (e.g., 5) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-34,What is the most popular sport played in a team at school in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular sport played in a team at school in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-35,Who is the most popular sport commentator in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Who is the most popular sport commentator in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-36,What is the most popular sport team in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular sport team in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+An-ar-43,What are the common places or venues where individuals in Mexico usually gather to watch sports broadcasts?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What are the common places or venues where individuals in Mexico usually gather to watch sports broadcasts?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-05,"How many meals per day do people from Mexico usually have? (Provide Arabic numerals (e.g., 5) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many meals per day do people from Mexico usually have? (Provide Arabic numerals (e.g., 5) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-06,Which is the most important meal of the day to people from Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which is the most important meal of the day to people from Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-08,What is the most common ingredient used in Mexico's diet?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most common ingredient used in Mexico's diet?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-09,What do people from Mexico usually eat for dessert?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people from Mexico usually eat for dessert?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-11,Which day of the week do people usually organize a family meal in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which day of the week do people usually organize a family meal in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-14,Which is the most popular hot drink in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which is the most popular hot drink in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-19,What do young people from Mexico usually drink at the night club?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do young people from Mexico usually drink at the night club?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-21,At which month do people usually take holidays in Mexico? (Provide Arabic numerals (1~12) only.),"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: At which month do people usually take holidays in Mexico? (Provide Arabic numerals (1~12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-29,What tradition is there in Mexico for New Year's Eve?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What tradition is there in Mexico for New Year's Eve?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-38,Which is the typical type of house for a family in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which is the typical type of house for a family in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-41,Where do the dependent elderly usually live in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Where do the dependent elderly usually live in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-42,"How long (in weeks) is Mexico's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How long (in weeks) is Mexico's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-43,"How long (in weeks) is Mexico's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How long (in weeks) is Mexico's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ca-sp-45,What type of destination is commonly chosen for a family vacation in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What type of destination is commonly chosen for a family vacation in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-05,What sports do seniors like the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do seniors like the most in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-06,What sports do men like to play the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do men like to play the most in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-07,Who is the most famous basketball player in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Who is the most famous basketball player in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,,
+Gu-ch-08,What is the most popular sports among children in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular sports among children in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-09,What sports do women like to play the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do women like to play the most in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-11,What sports event has Mexico won the most gold medals at the Olympics?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports event has Mexico won the most gold medals at the Olympics?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-15,What sports do male students in university like to play the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do male students in university like to play the most in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-16,"How many people are there in a family on average in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many people are there in a family on average in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-18,"How many children do couples usually have in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many children do couples usually have in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-31,"What is the duration of elementary school in years in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the duration of elementary school in years in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-32,"What is the duration of compulsory education in years in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the duration of compulsory education in years in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-33,"From which age do students start learning their second language in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: From which age do students start learning their second language in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-38,"What is the duration of undergraduate education in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the duration of undergraduate education in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-40,"What time do younger elementary school students finish school in Mexico? (Provide in HH:MM format (e.g., 18:00, 09:00).)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What time do younger elementary school students finish school in Mexico? (Provide in HH:MM format (e.g., 18:00, 09:00).)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Gu-ch-41,"How many musical instruments do elementary school students in Mexico typically play? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many musical instruments do elementary school students in Mexico typically play? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-02,What day of the week do people in Mexico prefer to have company dinners?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What day of the week do people in Mexico prefer to have company dinners?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-03,Which region/city has the highest number of financial companies in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which region/city has the highest number of financial companies in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-07,What is the most famous private company in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most famous private company in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-08,"What is the maximum number of hours one can work per week in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the maximum number of hours one can work per week in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-09,What do people typically eat during company get-together in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people typically eat during company get-together in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-14,What is the representative export item of Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the representative export item of Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-15,"How long (in hours) is the typical lunch break in Mexico? (Provide Arabic numerals up to one decimal point (e.g., 2, 3.5) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How long (in hours) is the typical lunch break in Mexico? (Provide Arabic numerals up to one decimal point (e.g., 2, 3.5) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-16,Where do mothers stay for a certain period after childbirth for recovery in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Where do mothers stay for a certain period after childbirth for recovery in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-19,What is Mexico's most commonly given flower on Parents' Day?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is Mexico's most commonly given flower on Parents' Day?
+Respuesta:",<extra_id_0>.,inst-4,,
+Ji-ko-22,What do people especially spend their first salary on in Mexico's society?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people especially spend their first salary on in Mexico's society?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-24,What is the most preferred recreational facility among children in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most preferred recreational facility among children in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-25,What are the family-related holidays in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What are the family-related holidays in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-26,What are the key milestones associated with children's independence from their parents in Mexico's society?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What are the key milestones associated with children's independence from their parents in Mexico's society?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-27,What is the common gift you give when visiting elderly parents in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the common gift you give when visiting elderly parents in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-28,When is the first day that people celebrate after a child is born in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: When is the first day that people celebrate after a child is born in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-29,Which age's birthday is celebrated the most grandly in Mexico's society?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which age's birthday is celebrated the most grandly in Mexico's society?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-31,Where do middle and high school students in Mexico usually study for exams?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Where do middle and high school students in Mexico usually study for exams?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-33,Where do high school students in Mexico usually go after dinner?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Where do high school students in Mexico usually go after dinner?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-34,How do elementary school students in Mexico go to school?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How do elementary school students in Mexico go to school?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-35,What is the most common form of private education in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most common form of private education in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-36,Which subject’s academy/private educational institute do middle or high students most frequently attend in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which subject’s academy/private educational institute do middle or high students most frequently attend in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-37,What type of clothing do middle and high school students wear to school in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What type of clothing do middle and high school students wear to school in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-38,Which major is considered the most difficult to gain admission to in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which major is considered the most difficult to gain admission to in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-39,What is the most commonly learned musical instrument by elementary school students in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most commonly learned musical instrument by elementary school students in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-40,What do high school students typically do during break time in schools in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do high school students typically do during break time in schools in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-41,What kind of shoes do students wear in schools in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What kind of shoes do students wear in schools in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-42,What are the required subjects in Mexico's university entrance exam?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What are the required subjects in Mexico's university entrance exam?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-44,Which region (within a city) in Mexico has the highest academic fervor?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which region (within a city) in Mexico has the highest academic fervor?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Ji-ko-45,What do people look forward to the most at university festivals in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people look forward to the most at university festivals in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-01,What is the second most popular sport in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the second most popular sport in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-02,What is the most popular sport played without a ball in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular sport played without a ball in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-09,What sports are most associated with the upper class in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports are most associated with the upper class in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-13,What is the most popular water sport in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular water sport in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-14,What is the most popular mental sport in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular mental sport in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-18,"How many holiday days per year does a standard worker gets in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many holiday days per year does a standard worker gets in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-19,What region in Mexico has been traditionally associated with agriculture?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What region in Mexico has been traditionally associated with agriculture?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-21,"What time, if any, do people usually leave work for lunch in Mexico? (Provide in HH:MM format (e.g., 18:00, 09:00).)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What time, if any, do people usually leave work for lunch in Mexico? (Provide in HH:MM format (e.g., 18:00, 09:00).)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-31,"What time do high school students tend to leave school in Mexico? (Provide in HH:MM format (e.g., 18:00, 09:00).)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What time do high school students tend to leave school in Mexico? (Provide in HH:MM format (e.g., 18:00, 09:00).)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-32,What sport do elementary school students tend to practice at school in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sport do elementary school students tend to practice at school in Mexico?
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-36,"How long (in weeks) are summer vacations at elementary schools in Mexico? (Provide in Arabic numerals (e.g., 7, 8) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How long (in weeks) are summer vacations at elementary schools in Mexico? (Provide in Arabic numerals (e.g., 7, 8) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-37,"How long (in weeks) are summer vacations at universities in Mexico? (Provide in Arabic numerals (e.g., 7, 8) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How long (in weeks) are summer vacations at universities in Mexico? (Provide in Arabic numerals (e.g., 7, 8) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0
+Jo-sp-39,"At what age does elementary education begin in Mexico? (Provide in Arabic numerals (e.g., 7, 8) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: At what age does elementary education begin in Mexico? (Provide in Arabic numerals (e.g., 7, 8) only.)
+Respuesta:",<extra_id_0>.,inst-4,0,0

@@ -1,0 +1,401 @@
+ID,Translation,prompt,response,prompt_no,binary_score,weight_score
+Al-en-01,What is a common snack for preschool kids in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a common snack for preschool kids in US?
+Answer:",True:,inst-4,0,0
+Al-en-02,What is a popular food to go with beer in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular food to go with beer in US?
+Answer:",True,inst-4,0,0
+Al-en-04,What is the most popular fruit in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular fruit in US?
+Answer:",True,inst-4,0,0
+Al-en-06,What is a common school cafeteria food in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a common school cafeteria food in US?
+Answer:",True:,inst-4,0,0
+Al-en-08,What are the most commonly eaten snacks at shopping malls in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What are the most commonly eaten snacks at shopping malls in US?
+Answer:",True:,inst-4,0,0
+Al-en-09,What is a popular snack at an amusement park in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular snack at an amusement park in US?
+Answer:",True,inst-4,0,0
+Al-en-16,"At what age do kids start preschool in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: At what age do kids start preschool in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,0,0
+Al-en-17,What is a popular afterschool sport for elementary schools in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular afterschool sport for elementary schools in US?
+Answer:",True,inst-4,0,0
+Al-en-18,For which subject do elementary students get private education in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: For which subject do elementary students get private education in US?
+Answer:",True:,inst-4,0,0
+Al-en-19,What is a popular second language for high school students in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular second language for high school students in US?
+Answer:",True,inst-4,0,0
+Al-en-21,Which subject is the most important for gifted education in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which subject is the most important for gifted education in US?
+Answer:",True,inst-4,0,0
+Al-en-32,What is the main dish for Thanksgiving in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the main dish for Thanksgiving in US?
+Answer:",True,inst-4,0,0
+Al-en-33,What do people do to celebrate Halloween in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people do to celebrate Halloween in US?
+Answer:",True,inst-4,0,0
+Al-en-34,What do people do to celebrate New Year's Day in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people do to celebrate New Year's Day in US?
+Answer:",True,inst-4,0,0
+Al-en-35,What do people do to celebrate Christmas in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people do to celebrate Christmas in US?
+Answer:",True,inst-4,0,0
+Al-en-36,What food is associated with Halloween in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What food is associated with Halloween in US?
+Answer:",False,inst-4,0,0
+Al-en-37,What food is associated with Christmas in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What food is associated with Christmas in US?
+Answer:",True,inst-4,0,0
+Al-en-38,What food is associated with Valentine's day in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What food is associated with Valentine's day in US?
+Answer:",True:,inst-4,0,0
+Al-en-39,What do people eat on their birthday in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people eat on their birthday in US?
+Answer:",True,inst-4,0,0
+Al-en-40,What is a popular outdoor place for families to have fun with little kids in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular outdoor place for families to have fun with little kids in US?
+Answer:",True,inst-4,0,0
+Al-en-43,What is a popular indoor activity for families in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular indoor activity for families in US?
+Answer:",True,inst-4,0,0
+An-ar-02,Where do university students have lunch in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Where do university students have lunch in US?
+Answer:",True,inst-4,0,0
+An-ar-03,Which month is the final exam term usually scheduled at high schools in US? (Provide Arabic numerals (1~12) only.),"Read the following question and provide a single answer without any explanations.
+
+Question: Which month is the final exam term usually scheduled at high schools in US? (Provide Arabic numerals (1~12) only.)
+Answer:",112,inst-4,1,0.25
+An-ar-08,"How many hours a day do students in US usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many hours a day do students in US usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)
+Answer:",2,inst-4,0,0
+An-ar-09,"How many languages do students study at high school in US? (Provide Arabic numerals (e.g., 5) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many languages do students study at high school in US? (Provide Arabic numerals (e.g., 5) only.)
+Answer:",5),inst-4,0,0
+An-ar-34,What is the most popular sport played in a team at school in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular sport played in a team at school in US?
+Answer:",True,inst-4,0,0
+An-ar-35,Who is the most popular sport commentator in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Who is the most popular sport commentator in US?
+Answer:",True:,inst-4,,
+An-ar-36,What is the most popular sport team in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular sport team in US?
+Answer:",False,inst-4,0,0
+An-ar-43,What are the common places or venues where individuals in US usually gather to watch sports broadcasts?,"Read the following question and provide a single answer without any explanations.
+
+Question: What are the common places or venues where individuals in US usually gather to watch sports broadcasts?
+Answer:",True:,inst-4,0,0
+Ca-sp-05,"How many meals per day do people from US usually have? (Provide Arabic numerals (e.g., 5) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many meals per day do people from US usually have? (Provide Arabic numerals (e.g., 5) only.)
+Answer:",5),inst-4,0,0
+Ca-sp-06,Which is the most important meal of the day to people from US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which is the most important meal of the day to people from US?
+Answer:",True,inst-4,0,0
+Ca-sp-08,What is the most common ingredient used in US's diet?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most common ingredient used in US's diet?
+Answer:",True:,inst-4,0,0
+Ca-sp-09,What do people from US usually eat for dessert?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people from US usually eat for dessert?
+Answer:",True:,inst-4,0,0
+Ca-sp-11,Which day of the week do people usually organize a family meal in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which day of the week do people usually organize a family meal in US?
+Answer:",True,inst-4,0,0
+Ca-sp-14,Which is the most popular hot drink in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which is the most popular hot drink in US?
+Answer:",True,inst-4,0,0
+Ca-sp-19,What do young people from US usually drink at the night club?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do young people from US usually drink at the night club?
+Answer:",True,inst-4,0,0
+Ca-sp-21,At which month do people usually take holidays in US? (Provide Arabic numerals (1~12) only.),"Read the following question and provide a single answer without any explanations.
+
+Question: At which month do people usually take holidays in US? (Provide Arabic numerals (1~12) only.)
+Answer:",112,inst-4,1,1.0
+Ca-sp-29,What tradition is there in US for New Year's Eve?,"Read the following question and provide a single answer without any explanations.
+
+Question: What tradition is there in US for New Year's Eve?
+Answer:",True,inst-4,0,0
+Ca-sp-38,Which is the typical type of house for a family in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which is the typical type of house for a family in US?
+Answer:",True,inst-4,0,0
+Ca-sp-41,Where do the dependent elderly usually live in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Where do the dependent elderly usually live in US?
+Answer:",True,inst-4,0,0
+Ca-sp-42,"How long (in weeks) is US's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How long (in weeks) is US's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)
+Answer:",weeks,inst-4,0,0
+Ca-sp-43,"How long (in weeks) is US's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How long (in weeks) is US's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)
+Answer:",weeks,inst-4,0,0
+Ca-sp-45,What type of destination is commonly chosen for a family vacation in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What type of destination is commonly chosen for a family vacation in US?
+Answer:",True,inst-4,0,0
+Gu-ch-05,What sports do seniors like the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do seniors like the most in US?
+Answer:",True,inst-4,0,0
+Gu-ch-06,What sports do men like to play the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do men like to play the most in US?
+Answer:",True,inst-4,0,0
+Gu-ch-07,Who is the most famous basketball player in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Who is the most famous basketball player in US?
+Answer:",True,inst-4,0,0
+Gu-ch-08,What is the most popular sports among children in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular sports among children in US?
+Answer:",True,inst-4,0,0
+Gu-ch-09,What sports do women like to play the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do women like to play the most in US?
+Answer:",True,inst-4,0,0
+Gu-ch-11,What sports event has US won the most gold medals at the Olympics?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports event has US won the most gold medals at the Olympics?
+Answer:",True,inst-4,0,0
+Gu-ch-15,What sports do male students in university like to play the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do male students in university like to play the most in US?
+Answer:",True,inst-4,0,0
+Gu-ch-16,"How many people are there in a family on average in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many people are there in a family on average in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,0,0
+Gu-ch-18,"How many children do couples usually have in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many children do couples usually have in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,1,1.0
+Gu-ch-31,"What is the duration of elementary school in years in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: What is the duration of elementary school in years in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,0,0
+Gu-ch-32,"What is the duration of compulsory education in years in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: What is the duration of compulsory education in years in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,1,1.0
+Gu-ch-33,"From which age do students start learning their second language in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: From which age do students start learning their second language in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,0,0
+Gu-ch-38,"What is the duration of undergraduate education in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: What is the duration of undergraduate education in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,0,0
+Gu-ch-40,"What time do younger elementary school students finish school in US? (Provide in HH:MM format (e.g., 18:00, 09:00).)","Read the following question and provide a single answer without any explanations.
+
+Question: What time do younger elementary school students finish school in US? (Provide in HH:MM format (e.g., 18:00, 09:00).)
+Answer:","18:00, 09:00",inst-4,1,0.5
+Gu-ch-41,"How many musical instruments do elementary school students in US typically play? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many musical instruments do elementary school students in US typically play? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,1,1.0
+Ji-ko-02,What day of the week do people in US prefer to have company dinners?,"Read the following question and provide a single answer without any explanations.
+
+Question: What day of the week do people in US prefer to have company dinners?
+Answer:",True,inst-4,0,0
+Ji-ko-03,Which region/city has the highest number of financial companies in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which region/city has the highest number of financial companies in US?
+Answer:",True,inst-4,0,0
+Ji-ko-07,What is the most famous private company in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most famous private company in US?
+Answer:",True,inst-4,0,0
+Ji-ko-08,"What is the maximum number of hours one can work per week in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: What is the maximum number of hours one can work per week in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,0,0
+Ji-ko-09,What do people typically eat during company get-together in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people typically eat during company get-together in US?
+Answer:",True,inst-4,0,0
+Ji-ko-14,What is the representative export item of US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the representative export item of US?
+Answer:",True:,inst-4,0,0
+Ji-ko-15,"How long (in hours) is the typical lunch break in US? (Provide Arabic numerals up to one decimal point (e.g., 2, 3.5) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How long (in hours) is the typical lunch break in US? (Provide Arabic numerals up to one decimal point (e.g., 2, 3.5) only.)
+Answer:",2 hours,inst-4,0,0
+Ji-ko-16,Where do mothers stay for a certain period after childbirth for recovery in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Where do mothers stay for a certain period after childbirth for recovery in US?
+Answer:",True,inst-4,0,0
+Ji-ko-19,What is US's most commonly given flower on Parents' Day?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is US's most commonly given flower on Parents' Day?
+Answer:",False,inst-4,,
+Ji-ko-22,What do people especially spend their first salary on in US's society?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people especially spend their first salary on in US's society?
+Answer:",True:,inst-4,0,0
+Ji-ko-24,What is the most preferred recreational facility among children in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most preferred recreational facility among children in US?
+Answer:",True,inst-4,0,0
+Ji-ko-25,What are the family-related holidays in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What are the family-related holidays in US?
+Answer:",True:,inst-4,0,0
+Ji-ko-26,What are the key milestones associated with children's independence from their parents in US's society?,"Read the following question and provide a single answer without any explanations.
+
+Question: What are the key milestones associated with children's independence from their parents in US's society?
+Answer:",False,inst-4,0,0
+Ji-ko-27,What is the common gift you give when visiting elderly parents in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the common gift you give when visiting elderly parents in US?
+Answer:",True,inst-4,0,0
+Ji-ko-28,When is the first day that people celebrate after a child is born in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: When is the first day that people celebrate after a child is born in US?
+Answer:",True,inst-4,,
+Ji-ko-29,Which age's birthday is celebrated the most grandly in US's society?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which age's birthday is celebrated the most grandly in US's society?
+Answer:",False,inst-4,0,0
+Ji-ko-31,Where do middle and high school students in US usually study for exams?,"Read the following question and provide a single answer without any explanations.
+
+Question: Where do middle and high school students in US usually study for exams?
+Answer:",True,inst-4,0,0
+Ji-ko-33,Where do high school students in US usually go after dinner?,"Read the following question and provide a single answer without any explanations.
+
+Question: Where do high school students in US usually go after dinner?
+Answer:",True,inst-4,0,0
+Ji-ko-34,How do elementary school students in US go to school?,"Read the following question and provide a single answer without any explanations.
+
+Question: How do elementary school students in US go to school?
+Answer:",True:,inst-4,0,0
+Ji-ko-35,What is the most common form of private education in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most common form of private education in US?
+Answer:",True,inst-4,0,0
+Ji-ko-36,Which subject’s academy/private educational institute do middle or high students most frequently attend in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which subject’s academy/private educational institute do middle or high students most frequently attend in US?
+Answer:",True:,inst-4,0,0
+Ji-ko-37,What type of clothing do middle and high school students wear to school in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What type of clothing do middle and high school students wear to school in US?
+Answer:",True,inst-4,0,0
+Ji-ko-38,Which major is considered the most difficult to gain admission to in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which major is considered the most difficult to gain admission to in US?
+Answer:",True,inst-4,0,0
+Ji-ko-39,What is the most commonly learned musical instrument by elementary school students in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most commonly learned musical instrument by elementary school students in US?
+Answer:",True,inst-4,0,0
+Ji-ko-40,What do high school students typically do during break time in schools in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do high school students typically do during break time in schools in US?
+Answer:",False,inst-4,0,0
+Ji-ko-41,What kind of shoes do students wear in schools in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What kind of shoes do students wear in schools in US?
+Answer:",True,inst-4,0,0
+Ji-ko-42,What are the required subjects in US's university entrance exam?,"Read the following question and provide a single answer without any explanations.
+
+Question: What are the required subjects in US's university entrance exam?
+Answer:",True:,inst-4,0,0
+Ji-ko-44,Which region (within a city) in US has the highest academic fervor?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which region (within a city) in US has the highest academic fervor?
+Answer:",False,inst-4,0,0
+Ji-ko-45,What do people look forward to the most at university festivals in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people look forward to the most at university festivals in US?
+Answer:",True,inst-4,,
+Jo-sp-01,What is the second most popular sport in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the second most popular sport in US?
+Answer:",True,inst-4,0,0
+Jo-sp-02,What is the most popular sport played without a ball in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular sport played without a ball in US?
+Answer:",True,inst-4,0,0
+Jo-sp-09,What sports are most associated with the upper class in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports are most associated with the upper class in US?
+Answer:",True:,inst-4,0,0
+Jo-sp-13,What is the most popular water sport in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular water sport in US?
+Answer:",water sport,inst-4,0,0
+Jo-sp-14,What is the most popular mental sport in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular mental sport in US?
+Answer:",True,inst-4,0,0
+Jo-sp-18,"How many holiday days per year does a standard worker gets in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many holiday days per year does a standard worker gets in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",12,inst-4,0,0
+Jo-sp-19,What region in US has been traditionally associated with agriculture?,"Read the following question and provide a single answer without any explanations.
+
+Question: What region in US has been traditionally associated with agriculture?
+Answer:",True:,inst-4,0,0
+Jo-sp-21,"What time, if any, do people usually leave work for lunch in US? (Provide in HH:MM format (e.g., 18:00, 09:00).)","Read the following question and provide a single answer without any explanations.
+
+Question: What time, if any, do people usually leave work for lunch in US? (Provide in HH:MM format (e.g., 18:00, 09:00).)
+Answer:","18:00, 09:00",inst-4,0,0
+Jo-sp-31,"What time do high school students tend to leave school in US? (Provide in HH:MM format (e.g., 18:00, 09:00).)","Read the following question and provide a single answer without any explanations.
+
+Question: What time do high school students tend to leave school in US? (Provide in HH:MM format (e.g., 18:00, 09:00).)
+Answer:","18:00, 09:00",inst-4,0,0
+Jo-sp-32,What sport do elementary school students tend to practice at school in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sport do elementary school students tend to practice at school in US?
+Answer:",True,inst-4,0,0
+Jo-sp-36,"How long (in weeks) are summer vacations at elementary schools in US? (Provide in Arabic numerals (e.g., 7, 8) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How long (in weeks) are summer vacations at elementary schools in US? (Provide in Arabic numerals (e.g., 7, 8) only.)
+Answer:",weeks,inst-4,0,0
+Jo-sp-37,"How long (in weeks) are summer vacations at universities in US? (Provide in Arabic numerals (e.g., 7, 8) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How long (in weeks) are summer vacations at universities in US? (Provide in Arabic numerals (e.g., 7, 8) only.)
+Answer:",weeks,inst-4,0,0
+Jo-sp-39,"At what age does elementary education begin in US? (Provide in Arabic numerals (e.g., 7, 8) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: At what age does elementary education begin in US? (Provide in Arabic numerals (e.g., 7, 8) only.)
+Answer:",7,inst-4,0,0

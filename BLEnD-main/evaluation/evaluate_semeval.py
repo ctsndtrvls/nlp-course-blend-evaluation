@@ -50,69 +50,146 @@ def evaluate_semeval(
     print(f"Loading predictions from {predictions_file}")
     predictions_df = pd.read_csv(predictions_file, encoding='utf-8')
     
-    # Determine country from predictions file or use default
-    # For SemEval, we might need to process multiple countries
-    # This is a simplified version - may need adaptation based on actual SemEval format
+    # Determine model, country, and language from predictions file
+    # Try to infer from filename first
+    filename = os.path.basename(predictions_file)
+    model_name = None
+    country = None
+    language = None
     
-    # Group by country if country column exists, otherwise process all together
-    if 'country' in predictions_df.columns:
-        countries = predictions_df['country'].unique()
+    # Extract model name from filename (e.g., "mt5-small-Mexico_Spanish_inst-4_result.csv" or "Qwen2.5-3B-Instruct-US_English_inst-4_result.csv")
+    # Common model patterns
+    if 'mt5-small' in filename:
+        model_name = 'mt5-small'
+    elif 't5-small' in filename:
+        model_name = 't5-small'
+    elif 'Qwen2.5-3B-Instruct' in filename or 'Qwen' in filename:
+        model_name = 'Qwen2.5-3B-Instruct'
+    elif 'Qwen' in filename:
+        model_name = 'Qwen2.5-3B-Instruct'  # Default Qwen model
     else:
-        # Try to infer country from filename or use all available countries
-        countries = ['US']  # Default, should be adapted based on actual format
+        # Try to extract model name (everything before first dash or underscore before country)
+        parts = filename.replace('_result.csv', '').split('-')
+        if len(parts) > 1:
+            model_name = parts[0]
     
-    all_results = []
+    # Try to extract country and language from filename
+    if 'Mexico' in filename:
+        country = 'Mexico'
+        language = 'Spanish'
+    elif 'Spain' in filename:
+        country = 'Spain'
+        language = 'Spanish'
+    elif 'China' in filename:
+        country = 'China'
+        language = 'Chinese'
+    elif 'US' in filename or 'United_States' in filename:
+        country = 'US'
+        language = 'English'
+    elif 'UK' in filename:
+        country = 'UK'
+        language = 'English'
+    else:
+        # Try to infer from COUNTRY_LANG mapping
+        from utils import COUNTRY_LANG
+        for c, l in COUNTRY_LANG.items():
+            if c in filename:
+                country = c
+                language = l
+                break
     
-    for country in countries:
-        print(f"\nProcessing country: {country}")
-        
-        # Filter predictions for this country
+    # Fallback: use country column or default
+    if country is None:
         if 'country' in predictions_df.columns:
-            country_predictions = predictions_df[predictions_df['country'] == country]
+            countries = predictions_df['country'].unique()
+            country = countries[0] if len(countries) > 0 else 'US'
         else:
-            country_predictions = predictions_df
+            country = 'US'  # Default
+    
+    # Determine language from COUNTRY_LANG if not set
+    if language is None:
+        from utils import COUNTRY_LANG
+        language = COUNTRY_LANG.get(country, 'English')
+    
+    # Fallback for model name
+    if model_name is None:
+        model_name = 'unknown'
+    
+    print(f"\nProcessing model: {model_name}, country: {country}, language: {language}")
+    
+    # Filter predictions for this country
+    if 'country' in predictions_df.columns:
+        country_predictions = predictions_df[predictions_df['country'] == country]
+    else:
+        country_predictions = predictions_df
+    
+    # Load annotations
+    annotation_file = annotation_template.replace('{country}', country.replace(' ', '_'))
+    annotation_path = os.path.join(annotations_dir, annotation_file)
+    
+    if not os.path.exists(annotation_path):
+        print(f"Warning: Annotation file not found: {annotation_path}")
+        return None
+    
+    with open(annotation_path, 'r', encoding='utf-8') as f:
+        annotations = json.load(f)
+    
+    # Load existing results if they exist
+    results_json_file = os.path.join(results_dir, 'results.json')
+    existing_results = []
+    if os.path.exists(results_json_file):
+        with open(results_json_file, 'r', encoding='utf-8') as f:
+            existing_data = json.load(f)
+            existing_results = existing_data.get('detailed_results', [])
+            print(f"Found {len(existing_results)} existing result(s)")
+    
+    all_results = existing_results.copy()
         
-        # Load annotations
-        annotation_file = annotation_template.replace('{country}', country.replace(' ', '_'))
-        annotation_path = os.path.join(annotations_dir, annotation_file)
-        
-        if not os.path.exists(annotation_path):
-            print(f"Warning: Annotation file not found: {annotation_path}")
-            continue
-        
-        with open(annotation_path, 'r', encoding='utf-8') as f:
-            annotations = json.load(f)
-        
-        # Determine language (could be in predictions or annotations)
-        # For now, try to infer from data
-        language = 'English'  # Default, should be adapted
-        
-        # Run evaluation
-        sem_b, sem_w, scored_df = soft_exact_match(
-            country=country,
-            language=language,
-            annotation_dict=annotations,
-            response_df=country_predictions,
-            id_col=id_col,
-            r_col=response_col,
-            annotations_key=annotations_key
-        )
-        
-        # Save detailed results
-        results_file = os.path.join(results_dir, f'{country}_detailed_results.csv')
-        scored_df.to_csv(results_file, index=False, encoding='utf-8')
-        
-        # Store summary results
-        all_results.append({
-            'country': country,
-            'language': language,
-            'SEM-B': sem_b,
-            'SEM-W': sem_w,
-            'num_questions': len(country_predictions)
-        })
-        
-        print(f"SEM-B: {sem_b:.2f}%")
-        print(f"SEM-W: {sem_w:.2f}%")
+    # Run evaluation
+    sem_b, sem_w, scored_df = soft_exact_match(
+        country=country,
+        language=language,
+        annotation_dict=annotations,
+        response_df=country_predictions,
+        id_col=id_col,
+        r_col=response_col,
+        annotations_key=annotations_key
+    )
+    
+    # Save detailed results (include model name in filename)
+    results_file = os.path.join(results_dir, f'{model_name}_{country}_{language}_detailed_results.csv')
+    scored_df.to_csv(results_file, index=False, encoding='utf-8')
+    
+    # Check if this model/country/language combination already exists
+    new_result = {
+        'model': model_name,
+        'country': country,
+        'language': language,
+        'SEM-B': sem_b,
+        'SEM-W': sem_w,
+        'num_questions': len(country_predictions)
+    }
+    
+    # Check if this exact combination already exists (model + country + language)
+    existing_idx = None
+    for idx, r in enumerate(all_results):
+        if (r.get('model') == model_name and 
+            r.get('country') == country and 
+            r.get('language') == language):
+            existing_idx = idx
+            break
+    
+    if existing_idx is not None:
+        # Replace existing entry
+        print(f"Replacing existing results for {model_name} - {country} ({language})")
+        all_results[existing_idx] = new_result
+    else:
+        # Add new result (different model/country/language combination)
+        print(f"Adding new results for {model_name} - {country} ({language})")
+        all_results.append(new_result)
+    
+    print(f"SEM-B: {sem_b:.2f}%")
+    print(f"SEM-W: {sem_w:.2f}%")
     
     # Save summary results
     summary_df = pd.DataFrame(all_results)
@@ -120,9 +197,18 @@ def evaluate_semeval(
     summary_df.to_csv(summary_file, index=False, encoding='utf-8')
     
     # Save results in CodaBench format (JSON)
+    # Calculate weighted average across all results
+    total_questions = sum(r['num_questions'] for r in all_results)
+    if total_questions > 0:
+        overall_sem_b = sum(r['SEM-B'] * r['num_questions'] for r in all_results) / total_questions
+        overall_sem_w = sum(r['SEM-W'] * r['num_questions'] for r in all_results) / total_questions
+    else:
+        overall_sem_b = 0
+        overall_sem_w = 0
+    
     results_json = {
-        'SEM-B': sum(r['SEM-B'] * r['num_questions'] for r in all_results) / sum(r['num_questions'] for r in all_results) if all_results else 0,
-        'SEM-W': sum(r['SEM-W'] * r['num_questions'] for r in all_results) / sum(r['num_questions'] for r in all_results) if all_results else 0,
+        'SEM-B': overall_sem_b,
+        'SEM-W': overall_sem_w,
         'detailed_results': all_results
     }
     
