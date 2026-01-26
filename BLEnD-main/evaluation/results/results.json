@@ -1,8 +1,9 @@
 {
-  "SEM-B": 1.8164855142353353,
-  "SEM-W": 1.5583555525925419,
+  "SEM-B": 1.6693520639332038,
+  "SEM-W": 1.407502184296811,
   "detailed_results": [
     {
+      "model": "Qwen2.5-3B-Instruct",
       "country": "US",
       "language": "English",
       "SEM-B": 8.24295010845987,
@@ -10,6 +11,7 @@
       "num_questions": 50
     },
     {
+      "model": "mt5-small",
       "country": "Mexico",
       "language": "Spanish",
       "SEM-B": 0.20876826722338201,
@@ -17,10 +19,19 @@
       "num_questions": 100
     },
     {
+      "model": "mt5-small",
       "country": "China",
       "language": "Chinese",
       "SEM-B": 0.21097046413502107,
       "SEM-W": 0.21097046413502107,
+      "num_questions": 100
+    },
+    {
+      "model": "t5-small",
+      "country": "US",
+      "language": "English",
+      "SEM-B": 1.3015184381778742,
+      "SEM-W": 1.0303687635574839,
       "num_questions": 100
     }
   ]

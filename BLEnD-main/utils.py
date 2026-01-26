@@ -81,6 +81,7 @@ MODEL_PATHS = {
     'Qwen1.5-32B-Chat':'Qwen/Qwen1.5-32B-Chat' ,
     'Qwen2.5-3B-Instruct':'Qwen/Qwen2.5-3B-Instruct',
     'mt5-small':'google/mt5-small',  # Multilingual T5 - encoder-decoder model
+    't5-small':'google-t5/t5-small',  # English-only T5 - encoder-decoder model
     'text-bison-002':'text-bison@002',
     'c4ai-command-r-v01':'CohereForAI/c4ai-command-r-v01',
     'c4ai-command-r-plus':'command-r-plus',

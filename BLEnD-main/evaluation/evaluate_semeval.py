@@ -50,19 +50,39 @@ def evaluate_semeval(
     print(f"Loading predictions from {predictions_file}")
     predictions_df = pd.read_csv(predictions_file, encoding='utf-8')
     
-    # Determine country from predictions file or use default
+    # Determine model, country, and language from predictions file
     # Try to infer from filename first
     filename = os.path.basename(predictions_file)
+    model_name = None
     country = None
     language = None
     
-    # Try to extract country and language from filename (e.g., "mt5-small-Mexico_Spanish_inst-4_result.csv")
+    # Extract model name from filename (e.g., "mt5-small-Mexico_Spanish_inst-4_result.csv" or "Qwen2.5-3B-Instruct-US_English_inst-4_result.csv")
+    # Common model patterns
+    if 'mt5-small' in filename:
+        model_name = 'mt5-small'
+    elif 't5-small' in filename:
+        model_name = 't5-small'
+    elif 'Qwen2.5-3B-Instruct' in filename or 'Qwen' in filename:
+        model_name = 'Qwen2.5-3B-Instruct'
+    elif 'Qwen' in filename:
+        model_name = 'Qwen2.5-3B-Instruct'  # Default Qwen model
+    else:
+        # Try to extract model name (everything before first dash or underscore before country)
+        parts = filename.replace('_result.csv', '').split('-')
+        if len(parts) > 1:
+            model_name = parts[0]
+    
+    # Try to extract country and language from filename
     if 'Mexico' in filename:
         country = 'Mexico'
         language = 'Spanish'
     elif 'Spain' in filename:
         country = 'Spain'
         language = 'Spanish'
+    elif 'China' in filename:
+        country = 'China'
+        language = 'Chinese'
     elif 'US' in filename or 'United_States' in filename:
         country = 'US'
         language = 'English'
@@ -91,7 +111,11 @@ def evaluate_semeval(
         from utils import COUNTRY_LANG
         language = COUNTRY_LANG.get(country, 'English')
     
-    print(f"\nProcessing country: {country}, language: {language}")
+    # Fallback for model name
+    if model_name is None:
+        model_name = 'unknown'
+    
+    print(f"\nProcessing model: {model_name}, country: {country}, language: {language}")
     
     # Filter predictions for this country
     if 'country' in predictions_df.columns:
@@ -132,12 +156,13 @@ def evaluate_semeval(
         annotations_key=annotations_key
     )
     
-    # Save detailed results
-    results_file = os.path.join(results_dir, f'{country}_{language}_detailed_results.csv')
+    # Save detailed results (include model name in filename)
+    results_file = os.path.join(results_dir, f'{model_name}_{country}_{language}_detailed_results.csv')
     scored_df.to_csv(results_file, index=False, encoding='utf-8')
     
-    # Check if this country/language combination already exists
+    # Check if this model/country/language combination already exists
     new_result = {
+        'model': model_name,
         'country': country,
         'language': language,
         'SEM-B': sem_b,
@@ -145,20 +170,22 @@ def evaluate_semeval(
         'num_questions': len(country_predictions)
     }
     
-    # Check if this exact combination already exists
+    # Check if this exact combination already exists (model + country + language)
     existing_idx = None
     for idx, r in enumerate(all_results):
-        if r['country'] == country and r['language'] == language:
+        if (r.get('model') == model_name and 
+            r.get('country') == country and 
+            r.get('language') == language):
             existing_idx = idx
             break
     
     if existing_idx is not None:
         # Replace existing entry
-        print(f"Replacing existing results for {country} ({language})")
+        print(f"Replacing existing results for {model_name} - {country} ({language})")
         all_results[existing_idx] = new_result
     else:
-        # Add new result (different country/language)
-        print(f"Adding new results for {country} ({language})")
+        # Add new result (different model/country/language combination)
+        print(f"Adding new results for {model_name} - {country} ({language})")
         all_results.append(new_result)
     
     print(f"SEM-B: {sem_b:.2f}%")
