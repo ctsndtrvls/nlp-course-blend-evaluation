@@ -19,3 +19,183 @@ Al-en-08,What are the most commonly eaten snacks at shopping malls in US?,"Read 
 
 Question: What are the most commonly eaten snacks at shopping malls in US?
 Answer:","Candy bars, chips, and popcorn.",inst-4
+Al-en-09,What is a popular snack at an amusement park in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular snack at an amusement park in US?
+Answer:",Soda and cotton candy,inst-4
+Al-en-16,"At what age do kids start preschool in US? (Provide Arabic numerals (e.g., 12) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: At what age do kids start preschool in US? (Provide Arabic numerals (e.g., 12) only.)
+Answer:",4,inst-4
+Al-en-17,What is a popular afterschool sport for elementary schools in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular afterschool sport for elementary schools in US?
+Answer:",Basketball,inst-4
+Al-en-18,For which subject do elementary students get private education in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: For which subject do elementary students get private education in US?
+Answer:",Math,inst-4
+Al-en-19,What is a popular second language for high school students in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular second language for high school students in US?
+Answer:",Spanish,inst-4
+Al-en-21,Which subject is the most important for gifted education in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which subject is the most important for gifted education in US?
+Answer:",Mathematics,inst-4
+Al-en-32,What is the main dish for Thanksgiving in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the main dish for Thanksgiving in US?
+Answer:",Turkey,inst-4
+Al-en-33,What do people do to celebrate Halloween in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people do to celebrate Halloween in US?
+Answer:","People in the US celebrate Halloween by dressing up in costumes, carving pumpkins into jack-o'-lanterns, trick-or-treating, decorating their homes and yards with Halloween-themed decorations, attending Halloween parties, watching horror movies, and participating in community Halloween events.",inst-4
+Al-en-34,What do people do to celebrate New Year's Day in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people do to celebrate New Year's Day in US?
+Answer:","People in the United States often celebrate New Year's Day with family gatherings, watching the ball drop in Times Square, attending parties, and making resolutions.",inst-4
+Al-en-35,What do people do to celebrate Christmas in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people do to celebrate Christmas in US?
+Answer:","People in the US celebrate Christmas with activities such as decorating Christmas trees, exchanging gifts, singing Christmas songs, attending church services, and preparing and sharing Christmas meals.",inst-4
+Al-en-36,What food is associated with Halloween in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What food is associated with Halloween in US?
+Answer:",Candy Corn,inst-4
+Al-en-37,What food is associated with Christmas in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What food is associated with Christmas in US?
+Answer:",Presents,inst-4
+Al-en-38,What food is associated with Valentine's day in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What food is associated with Valentine's day in US?
+Answer:",Chocolate,inst-4
+Al-en-39,What do people eat on their birthday in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people eat on their birthday in US?
+Answer:",Cake,inst-4
+Al-en-40,What is a popular outdoor place for families to have fun with little kids in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular outdoor place for families to have fun with little kids in US?
+Answer:",Theme parks,inst-4
+Al-en-43,What is a popular indoor activity for families in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular indoor activity for families in US?
+Answer:",Playing board games,inst-4
+An-ar-02,Where do university students have lunch in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Where do university students have lunch in US?
+Answer:",cafeterias,inst-4
+An-ar-03,Which month is the final exam term usually scheduled at high schools in US? (Provide Arabic numerals (1~12) only.),"Read the following question and provide a single answer without any explanations.
+
+Question: Which month is the final exam term usually scheduled at high schools in US? (Provide Arabic numerals (1~12) only.)
+Answer:",6,inst-4
+An-ar-08,"How many hours a day do students in US usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many hours a day do students in US usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)
+Answer:",7,inst-4
+An-ar-09,"How many languages do students study at high school in US? (Provide Arabic numerals (e.g., 5) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many languages do students study at high school in US? (Provide Arabic numerals (e.g., 5) only.)
+Answer:",42,inst-4
+An-ar-34,What is the most popular sport played in a team at school in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular sport played in a team at school in US?
+Answer:",American football,inst-4
+An-ar-35,Who is the most popular sport commentator in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Who is the most popular sport commentator in US?
+Answer:","Kevin Harvick (Note: Kevin Harvick is primarily known as a NASCAR driver, not a sport commentator.)",inst-4
+An-ar-36,What is the most popular sport team in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular sport team in US?
+Answer:","The most popular sport team in the US varies depending on the specific sport, but for professional sports, it generally includes teams like the New England Patriots (NFL), Golden State Warriors (NBA), or Los Angeles Lakers (NBA) for football, basketball, and some other sports. However, without specifying a particular sport, it's challenging to pinpoint a single most popular team across all professional sports leagues in the US.",inst-4
+An-ar-43,What are the common places or venues where individuals in US usually gather to watch sports broadcasts?,"Read the following question and provide a single answer without any explanations.
+
+Question: What are the common places or venues where individuals in US usually gather to watch sports broadcasts?
+Answer:","Sports arenas, stadiums, TVs/laptops/computers in living rooms, and streaming platforms.",inst-4
+Ca-sp-05,"How many meals per day do people from US usually have? (Provide Arabic numerals (e.g., 5) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How many meals per day do people from US usually have? (Provide Arabic numerals (e.g., 5) only.)
+Answer:",3,inst-4
+Ca-sp-06,Which is the most important meal of the day to people from US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which is the most important meal of the day to people from US?
+Answer:",Breakfast,inst-4
+Ca-sp-08,What is the most common ingredient used in US's diet?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most common ingredient used in US's diet?
+Answer:",Sodium chloride (table salt),inst-4
+Ca-sp-09,What do people from US usually eat for dessert?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do people from US usually eat for dessert?
+Answer:",ice cream,inst-4
+Ca-sp-11,Which day of the week do people usually organize a family meal in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which day of the week do people usually organize a family meal in US?
+Answer:",Sunday,inst-4
+Ca-sp-14,Which is the most popular hot drink in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which is the most popular hot drink in US?
+Answer:",Espresso,inst-4
+Ca-sp-19,What do young people from US usually drink at the night club?,"Read the following question and provide a single answer without any explanations.
+
+Question: What do young people from US usually drink at the night club?
+Answer:","Drinks vary widely among different young people in the US, but popular options at nightclubs often include cocktails, beer, and mixed drinks like shooters or fruity cocktails.",inst-4
+Ca-sp-21,At which month do people usually take holidays in US? (Provide Arabic numerals (1~12) only.),"Read the following question and provide a single answer without any explanations.
+
+Question: At which month do people usually take holidays in US? (Provide Arabic numerals (1~12) only.)
+Answer:",7,inst-4
+Ca-sp-29,What tradition is there in US for New Year's Eve?,"Read the following question and provide a single answer without any explanations.
+
+Question: What tradition is there in US for New Year's Eve?
+Answer:","Eating a slice of a special New Year's Eve cake called a ""cosmic apple"" at midnight",inst-4
+Ca-sp-38,Which is the typical type of house for a family in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Which is the typical type of house for a family in US?
+Answer:","The typical type of house for a family in the US can vary widely depending on location, income level, and personal preferences, but common types include single-family homes, townhouses, and suburban houses. However, without specifying a particular region or context, it's difficult to provide a definitive single answer.",inst-4
+Ca-sp-41,Where do the dependent elderly usually live in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Where do the dependent elderly usually live in US?
+Answer:","Nursing homes, assisted living facilities, and home care services.",inst-4
+Ca-sp-42,"How long (in weeks) is US's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How long (in weeks) is US's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)
+Answer:",16,inst-4
+Ca-sp-43,"How long (in weeks) is US's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)","Read the following question and provide a single answer without any explanations.
+
+Question: How long (in weeks) is US's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)
+Answer:",2,inst-4
+Ca-sp-45,What type of destination is commonly chosen for a family vacation in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What type of destination is commonly chosen for a family vacation in US?
+Answer:",Beach resort,inst-4
+Gu-ch-05,What sports do seniors like the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do seniors like the most in US?
+Answer:",Golf,inst-4
+Gu-ch-06,What sports do men like to play the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do men like to play the most in US?
+Answer:",Basketball,inst-4
+Gu-ch-07,Who is the most famous basketball player in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: Who is the most famous basketball player in US?
+Answer:",LeBron James,inst-4
+Gu-ch-08,What is the most popular sports among children in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular sports among children in US?
+Answer:",Soccer (or football in some regions),inst-4
+Gu-ch-09,What sports do women like to play the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do women like to play the most in US?
+Answer:",Basketball,inst-4
+Gu-ch-11,What sports event has US won the most gold medals at the Olympics?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports event has US won the most gold medals at the Olympics?
+Answer:",Track and Field,inst-4
+Gu-ch-15,What sports do male students in university like to play the most in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What sports do male students in university like to play the most in US?
+Answer:",American football,inst-4
