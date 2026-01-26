@@ -18,7 +18,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 Al-en-08,What are the most commonly eaten snacks at shopping malls in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What are the most commonly eaten snacks at shopping malls in Mexico?
-Respuesta:",<extra_id_0>.,inst-4,0,0
+Respuesta:",<extra_id_0>.,inst-4,1,0.3333333333333333
 Al-en-09,What is a popular snack at an amusement park in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What is a popular snack at an amusement park in Mexico?
@@ -46,7 +46,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 Al-en-32,What is the main dish for Thanksgiving in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What is the main dish for Thanksgiving in Mexico?
-Respuesta:",<extra_id_0>.,inst-4,0,0
+Respuesta:",<extra_id_0>.,inst-4,,
 Al-en-33,What do people do to celebrate Halloween in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What do people do to celebrate Halloween in Mexico?
@@ -106,7 +106,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 An-ar-35,Who is the most popular sport commentator in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: Who is the most popular sport commentator in Mexico?
-Respuesta:",<extra_id_0>.,inst-4,,
+Respuesta:",<extra_id_0>.,inst-4,0,0
 An-ar-36,What is the most popular sport team in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What is the most popular sport team in Mexico?
@@ -162,7 +162,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 Ca-sp-42,"How long (in weeks) is Mexico's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: How long (in weeks) is Mexico's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)
-Respuesta:",<extra_id_0>.,inst-4,1,0.3333333333333333
+Respuesta:",<extra_id_0>.,inst-4,0,0
 Ca-sp-43,"How long (in weeks) is Mexico's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: How long (in weeks) is Mexico's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)
@@ -182,7 +182,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 Gu-ch-07,Who is the most famous basketball player in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: Who is the most famous basketball player in Mexico?
-Respuesta:",<extra_id_0>.,inst-4,0,0
+Respuesta:",<extra_id_0>.,inst-4,,
 Gu-ch-08,What is the most popular sports among children in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What is the most popular sports among children in Mexico?
@@ -230,7 +230,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 Gu-ch-41,"How many musical instruments do elementary school students in Mexico typically play? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: How many musical instruments do elementary school students in Mexico typically play? (Provide Arabic numerals (e.g., 12) only.)
-Respuesta:",<extra_id_0>.,inst-4,1,0.3333333333333333
+Respuesta:",<extra_id_0>.,inst-4,0,0
 Ji-ko-02,What day of the week do people in Mexico prefer to have company dinners?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What day of the week do people in Mexico prefer to have company dinners?
@@ -290,7 +290,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 Ji-ko-28,When is the first day that people celebrate after a child is born in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: When is the first day that people celebrate after a child is born in Mexico?
-Respuesta:",<extra_id_0>.,inst-4,,
+Respuesta:",<extra_id_0>.,inst-4,0,0
 Ji-ko-29,Which age's birthday is celebrated the most grandly in Mexico's society?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: Which age's birthday is celebrated the most grandly in Mexico's society?
@@ -346,7 +346,7 @@ Respuesta:",<extra_id_0>.,inst-4,0,0
 Ji-ko-45,What do people look forward to the most at university festivals in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What do people look forward to the most at university festivals in Mexico?
-Respuesta:",<extra_id_0>.,inst-4,,
+Respuesta:",<extra_id_0>.,inst-4,0,0
 Jo-sp-01,What is the second most popular sport in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
 
 Pregunta: What is the second most popular sport in Mexico?

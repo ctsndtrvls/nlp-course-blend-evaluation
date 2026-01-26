@@ -183,8 +183,13 @@ def lemma_check(answer,llm_response,nlp_pipeline,language='Korean'):
         llm_tokens = cltk_nlp.analyze(text=llm_response).lemmata
         
     elif language == 'Spanish':
-        answer_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(answer)[0]['lemma']]
-        llm_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(llm_response)[0]['lemma']]
+        if nlp_pipeline is not None and SPARKNLP_AVAILABLE:
+            answer_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(answer)[0]['lemma']]
+            llm_tokens = [lemma.result for lemma in nlp_pipeline.fullAnnotate(llm_response)[0]['lemma']]
+        else:
+            # Fall back to simple word matching if SparkNLP not available
+            answer_tokens = answer.lower().split()
+            llm_tokens = llm_response.lower().split()
         
     elif language == 'Sundanese':
         stemmer = EcsStemmer()
@@ -255,22 +260,31 @@ def soft_exact_match(country,language,annotation_dict,response_df,id_col,r_col,a
     valid_question_cnt = 0
     
     if language == 'Spanish':
-        spark = sparknlp.start()
-        
-        document_assembler = DocumentAssembler() \
-            .setInputCol("text") \
-            .setOutputCol("document")
-
-        tokenizer = Tokenizer() \
-            .setInputCols(["document"]) \
-            .setOutputCol("token")
-
-        lemmatizer = LemmatizerModel.pretrained("lemma", "es") \
-                .setInputCols(["token"]) \
-                .setOutputCol("lemma")
+        if SPARKNLP_AVAILABLE:
+            try:
+                spark = sparknlp.start()
                 
-        nlp_pipeline = Pipeline(stages=[document_assembler, tokenizer, lemmatizer])
-        nlpPipeline = LightPipeline(nlp_pipeline.fit(spark.createDataFrame([['']]).toDF('text')))
+                document_assembler = DocumentAssembler() \
+                    .setInputCol("text") \
+                    .setOutputCol("document")
+
+                tokenizer = Tokenizer() \
+                    .setInputCols(["document"]) \
+                    .setOutputCol("token")
+
+                lemmatizer = LemmatizerModel.pretrained("lemma", "es") \
+                        .setInputCols(["token"]) \
+                        .setOutputCol("lemma")
+                        
+                nlp_pipeline = Pipeline(stages=[document_assembler, tokenizer, lemmatizer])
+                nlpPipeline = LightPipeline(nlp_pipeline.fit(spark.createDataFrame([['']]).toDF('text')))
+            except Exception as e:
+                print(f"Warning: Could not initialize SparkNLP for Spanish: {e}")
+                print("Falling back to simple word matching for Spanish")
+                nlpPipeline = None
+        else:
+            print("Warning: SparkNLP not available. Using simple word matching for Spanish")
+            nlpPipeline = None
     
     elif language == 'Amharic':
         spark = sparknlp.start()
