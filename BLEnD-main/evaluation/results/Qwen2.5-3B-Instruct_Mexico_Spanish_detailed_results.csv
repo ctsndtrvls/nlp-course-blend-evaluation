@@ -1,0 +1,201 @@
+ID,Translation,prompt,response,prompt_no,binary_score,weight_score
+Al-en-01,What is a common snack for preschool kids in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a common snack for preschool kids in Mexico?
+Respuesta:",Pan de molde con jamón y queso,inst-4,0,0
+Al-en-02,What is a popular food to go with beer in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular food to go with beer in Mexico?
+Respuesta:",Tacos al pastor,inst-4,1,1.0
+Al-en-04,What is the most popular fruit in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular fruit in Mexico?
+Respuesta:",Durango,inst-4,0,0
+Al-en-06,What is a common school cafeteria food in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a common school cafeteria food in Mexico?
+Respuesta:",Tacos al pastor,inst-4,0,0
+Al-en-08,What are the most commonly eaten snacks at shopping malls in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What are the most commonly eaten snacks at shopping malls in Mexico?
+Respuesta:",Churros,inst-4,1,0.3333333333333333
+Al-en-09,What is a popular snack at an amusement park in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular snack at an amusement park in Mexico?
+Respuesta:",Churros,inst-4,0,0
+Al-en-16,"At what age do kids start preschool in Mexico? (Provide Arabic numerals (e.g., 12) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: At what age do kids start preschool in Mexico? (Provide Arabic numerals (e.g., 12) only.)
+Respuesta:",5,inst-4,1,0.25
+Al-en-17,What is a popular afterschool sport for elementary schools in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular afterschool sport for elementary schools in Mexico?
+Respuesta:",Volleyball,inst-4,1,0.2
+Al-en-18,For which subject do elementary students get private education in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: For which subject do elementary students get private education in Mexico?
+Respuesta:",Educación extracurricular,inst-4,0,0
+Al-en-19,What is a popular second language for high school students in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular second language for high school students in Mexico?
+Respuesta:",Español,inst-4,0,0
+Al-en-21,Which subject is the most important for gifted education in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which subject is the most important for gifted education in Mexico?
+Respuesta:",Ciencias,inst-4,0,0
+Al-en-32,What is the main dish for Thanksgiving in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the main dish for Thanksgiving in Mexico?
+Respuesta:",Tortilla de choclo (Cornmeal tamales),inst-4,,
+Al-en-33,What do people do to celebrate Halloween in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people do to celebrate Halloween in Mexico?
+Respuesta:","People in Mexico celebrate Halloween on October 31st with various traditions including decorating homes and schools with pumpkin decorations, wearing costumes, and participating in parades. They also enjoy traditional foods like pan de muerto (bread of the dead) and calabaza en su tinta (pumpkin in its ink), and sometimes have parties or watch horror movies.",inst-4,0,0
+Al-en-34,What do people do to celebrate New Year's Day in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people do to celebrate New Year's Day in Mexico?
+Respuesta:","People in Mexico celebrate New Year's Day with fireworks displays, family gatherings, and traditional foods like tamales and pozole.",inst-4,1,0.3333333333333333
+Al-en-35,What do people do to celebrate Christmas in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people do to celebrate Christmas in Mexico?
+Respuesta:","People in Mexico celebrate Christmas with various traditions including posadas, nativity scenes (Casas Natal), piñatas, and the traditional feast of Las Posadas followed by Las Rosca de Reyes. They also decorate their homes with lights and ornaments, sing carols, and exchange gifts.",inst-4,1,0.6666666666666666
+Al-en-36,What food is associated with Halloween in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What food is associated with Halloween in Mexico?
+Respuesta:",Calabaza en polvo (o calabaza dulce),inst-4,0,0
+Al-en-37,What food is associated with Christmas in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What food is associated with Christmas in Mexico?
+Respuesta:",Tamales,inst-4,0,0
+Al-en-38,What food is associated with Valentine's day in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What food is associated with Valentine's day in Mexico?
+Respuesta:",Dulce de leche flan,inst-4,0,0
+Al-en-39,What do people eat on their birthday in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people eat on their birthday in Mexico?
+Respuesta:",Fresas con hojuelas (helado de fresa con galletas),inst-4,0,0
+Al-en-40,What is a popular outdoor place for families to have fun with little kids in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular outdoor place for families to have fun with little kids in Mexico?
+Respuesta:",Parque Temático Disneyland México,inst-4,1,1.0
+Al-en-43,What is a popular indoor activity for families in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is a popular indoor activity for families in Mexico?
+Respuesta:",Juegos de mesa y paseos en bicicleta eléctrica.,inst-4,0,0
+An-ar-02,Where do university students have lunch in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Where do university students have lunch in Mexico?
+Respuesta:",Universidad Autónoma de México,inst-4,0,0
+An-ar-03,Which month is the final exam term usually scheduled at high schools in Mexico? (Provide Arabic numerals (1~12) only.),"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which month is the final exam term usually scheduled at high schools in Mexico? (Provide Arabic numerals (1~12) only.)
+Respuesta:",6,inst-4,1,0.6666666666666666
+An-ar-08,"How many hours a day do students in Mexico usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many hours a day do students in Mexico usually spend at high school? (Provide Arabic numerals in integers (0~24), without any decimal points.)
+Respuesta:",6,inst-4,1,1.0
+An-ar-09,"How many languages do students study at high school in Mexico? (Provide Arabic numerals (e.g., 5) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many languages do students study at high school in Mexico? (Provide Arabic numerals (e.g., 5) only.)
+Respuesta:",4,inst-4,0,0
+An-ar-34,What is the most popular sport played in a team at school in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular sport played in a team at school in Mexico?
+Respuesta:",Fútbol (Soccer),inst-4,1,1.0
+An-ar-35,Who is the most popular sport commentator in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Who is the most popular sport commentator in Mexico?
+Respuesta:",Diego Costa,inst-4,0,0
+An-ar-36,What is the most popular sport team in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular sport team in Mexico?
+Respuesta:",Chivas de Guadalajara,inst-4,0,0
+An-ar-43,What are the common places or venues where individuals in Mexico usually gather to watch sports broadcasts?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What are the common places or venues where individuals in Mexico usually gather to watch sports broadcasts?
+Respuesta:",Sports bars and stadiums,inst-4,1,0.4
+Ca-sp-05,"How many meals per day do people from Mexico usually have? (Provide Arabic numerals (e.g., 5) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How many meals per day do people from Mexico usually have? (Provide Arabic numerals (e.g., 5) only.)
+Respuesta:",3,inst-4,1,1.0
+Ca-sp-06,Which is the most important meal of the day to people from Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which is the most important meal of the day to people from Mexico?
+Respuesta:",Breakfast,inst-4,1,1.0
+Ca-sp-08,What is the most common ingredient used in Mexico's diet?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most common ingredient used in Mexico's diet?
+Respuesta:",Corn (maize),inst-4,1,1.0
+Ca-sp-09,What do people from Mexico usually eat for dessert?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do people from Mexico usually eat for dessert?
+Respuesta:",Churros,inst-4,0,0
+Ca-sp-11,Which day of the week do people usually organize a family meal in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which day of the week do people usually organize a family meal in Mexico?
+Respuesta:",Domingo,inst-4,1,1.0
+Ca-sp-14,Which is the most popular hot drink in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which is the most popular hot drink in Mexico?
+Respuesta:",Tequila,inst-4,0,0
+Ca-sp-19,What do young people from Mexico usually drink at the night club?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What do young people from Mexico usually drink at the night club?
+Respuesta:",Cerveza,inst-4,1,1.0
+Ca-sp-21,At which month do people usually take holidays in Mexico? (Provide Arabic numerals (1~12) only.),"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: At which month do people usually take holidays in Mexico? (Provide Arabic numerals (1~12) only.)
+Respuesta:",10,inst-4,0,0
+Ca-sp-29,What tradition is there in Mexico for New Year's Eve?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What tradition is there in Mexico for New Year's Eve?
+Respuesta:","Tradición en México para el fin de año: la celebración de la ""La Noche de San Juan"" el 23 de junio antes del Año Nuevo.",inst-4,0,0
+Ca-sp-38,Which is the typical type of house for a family in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Which is the typical type of house for a family in Mexico?
+Respuesta:","Typical type of house for a family in Mexico can vary widely depending on region and socioeconomic factors, but some common examples include casas coloniales (colonial-style houses), ranchos, and casas rurales (rural houses). However, without more specific context, it's challenging to provide a single, definitive answer.",inst-4,0,0
+Ca-sp-41,Where do the dependent elderly usually live in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Where do the dependent elderly usually live in Mexico?
+Respuesta:",Hospitales y residencias de ancianos (cuidados paliativos o residencias terciarias).,inst-4,0,0
+Ca-sp-42,"How long (in weeks) is Mexico's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How long (in weeks) is Mexico's maternity leave for mums? (Provide Arabic numerals (e.g., 20) only.)
+Respuesta:",16,inst-4,0,0
+Ca-sp-43,"How long (in weeks) is Mexico's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)","Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: How long (in weeks) is Mexico's paternity leave for dads? (Provide Arabic numerals (e.g., 20) only.)
+Respuesta:",4,inst-4,0,0
+Ca-sp-45,What type of destination is commonly chosen for a family vacation in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What type of destination is commonly chosen for a family vacation in Mexico?
+Respuesta:",Beach resort destinations,inst-4,1,0.6666666666666666
+Gu-ch-05,What sports do seniors like the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do seniors like the most in Mexico?
+Respuesta:",Basketball,inst-4,0,0
+Gu-ch-06,What sports do men like to play the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do men like to play the most in Mexico?
+Respuesta:",Fútbol,inst-4,1,1.0
+Gu-ch-07,Who is the most famous basketball player in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: Who is the most famous basketball player in Mexico?
+Respuesta:","Luis Miguel Ángel Villar ""Lupe"" González",inst-4,,
+Gu-ch-08,What is the most popular sports among children in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What is the most popular sports among children in Mexico?
+Respuesta:",Fútbol,inst-4,1,1.0
+Gu-ch-09,What sports do women like to play the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do women like to play the most in Mexico?
+Respuesta:",Basketball,inst-4,1,0.25
+Gu-ch-11,What sports event has Mexico won the most gold medals at the Olympics?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports event has Mexico won the most gold medals at the Olympics?
+Respuesta:",Boxing,inst-4,1,0.5
+Gu-ch-15,What sports do male students in university like to play the most in Mexico?,"Lea la siguiente pregunta y proporcione una única respuesta sin explicaciones.
+
+Pregunta: What sports do male students in university like to play the most in Mexico?
+Respuesta:",Fútbol,inst-4,1,1.0
