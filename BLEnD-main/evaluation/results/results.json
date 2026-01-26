@@ -41,6 +41,14 @@
       "SEM-B": 4.592901878914405,
       "SEM-W": 3.395963813500348,
       "num_questions": 50
+    },
+    {
+      "model": "Qwen2.5-3B-Instruct",
+      "country": "China",
+      "language": "Chinese",
+      "SEM-B": 5.274261603375527,
+      "SEM-W": 4.040084388185654,
+      "num_questions": 50
     }
   ]
 }
