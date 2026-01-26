@@ -1,0 +1,13 @@
+{
+  "SEM-B": 8.24295010845987,
+  "SEM-W": 7.230657989877079,
+  "detailed_results": [
+    {
+      "country": "US",
+      "language": "English",
+      "SEM-B": 8.24295010845987,
+      "SEM-W": 7.230657989877079,
+      "num_questions": 50
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+ID,Translation,prompt,response,prompt_no
+Al-en-01,What is a common snack for preschool kids in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a common snack for preschool kids in US?
+Answer:",<extra_id_0>.,inst-4
+Al-en-02,What is a popular food to go with beer in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a popular food to go with beer in US?
+Answer:",<extra_id_0>.,inst-4
+Al-en-04,What is the most popular fruit in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is the most popular fruit in US?
+Answer:",<extra_id_0>.,inst-4
+Al-en-06,What is a common school cafeteria food in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What is a common school cafeteria food in US?
+Answer:",<extra_id_0>.,inst-4
+Al-en-08,What are the most commonly eaten snacks at shopping malls in US?,"Read the following question and provide a single answer without any explanations.
+
+Question: What are the most commonly eaten snacks at shopping malls in US?
+Answer:",<extra_id_0>.,inst-4

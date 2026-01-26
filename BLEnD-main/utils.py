@@ -79,7 +79,8 @@ MODEL_PATHS = {
     'Qwen1.5-72B-Chat':'Qwen/Qwen1.5-72B-Chat',
     'Qwen1.5-14B-Chat':'Qwen/Qwen1.5-14B-Chat' ,
     'Qwen1.5-32B-Chat':'Qwen/Qwen1.5-32B-Chat' ,
-    'Qwen2.5-3B-Instruct':'Qwen/Qwen2.5-3B-Instruct', 
+    'Qwen2.5-3B-Instruct':'Qwen/Qwen2.5-3B-Instruct',
+    'mt5-small':'google/mt5-small',  # Multilingual T5 - encoder-decoder model
     'text-bison-002':'text-bison@002',
     'c4ai-command-r-v01':'CohereForAI/c4ai-command-r-v01',
     'c4ai-command-r-plus':'command-r-plus',
@@ -117,26 +118,31 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
     is_cloud_model = ('gpt' in model_name or 'gemini' in model_name or 'claude' in model_name or 
                      'bison' in model_name or 'command' in model_name or 
                      ('Qwen' in model_name and '3B' not in model_name))  # Qwen 3B runs locally, others use Together API
+    # Note: mT5/T5 models are local encoder-decoder models, not cloud
     
     if not is_cloud_model:
         if 'llama' in model_name.lower():
             tokenizer = LlamaTokenizer.from_pretrained(model_path, use_fast=False,token=os.getenv("HF_TOKEN"))
             model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", 
                                                                 torch_dtype=torch.float16,
+                                                                resume_download=True,
                                                                 cache_dir=os.path.join(model_cache_dir,model_path),token=os.getenv("HF_TOKEN"))
         
         elif 'Orion' in model_name or 'polylm' in model_name:
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False, trust_remote_code=True)
             model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", trust_remote_code=True ,torch_dtype=torch.bfloat16,
+                                                                resume_download=True,
                                                                 cache_dir=os.path.join(model_cache_dir,model_path))
         
         elif 'aya' in model_name:
             tokenizer = AutoTokenizer.from_pretrained(model_path)
             if '23' in model_name:
                 model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto",token=os.getenv("HF_TOKEN"),
+                                                                resume_download=True,
                                                                 cache_dir=os.path.join(model_cache_dir,model_path))
             else:
                 model = AutoModelForSeq2SeqLM.from_pretrained(model_path, device_map="auto",
+                                                                    resume_download=True,
                                                                     cache_dir=os.path.join(model_cache_dir,model_path))
             
         elif 'mala' in model_name.lower():
@@ -151,6 +157,7 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
         elif 'mistral' in model_path.lower():
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False,token=os.getenv("HF_TOKEN"))
             model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto",
+                                                                resume_download=True,
                                                                 cache_dir=os.path.join(model_cache_dir,model_path),token=os.getenv("HF_TOKEN"))
         
         elif 'merak' in model_path.lower():
@@ -158,6 +165,7 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
             model = AutoModelForCausalLM.from_pretrained(model_path,
                                                         device_map="auto",
                                                         trust_remote_code=True,
+                                                        resume_download=True,
                                                         cache_dir=os.path.join(model_cache_dir,model_path))
 
             tokenizer = LlamaTokenizer.from_pretrained(model_path)
@@ -167,6 +175,7 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
             model = AutoModelForCausalLM.from_pretrained(model_path, 
                                                          device_map="auto", 
                                                          trust_remote_code=True,
+                                                         resume_download=True,
                                                          cache_dir=os.path.join(model_cache_dir,model_path))
         
         elif 'Qwen' in model_path and '3B' in model_path:
@@ -177,12 +186,30 @@ def get_tokenizer_model(model_name,model_path,model_cache_dir):
                 device_map="auto",
                 torch_dtype=torch.float16,  # Use float16 for better memory efficiency on M1
                 trust_remote_code=True,
+                resume_download=True,
+                cache_dir=os.path.join(model_cache_dir, model_path)
+            )
+        
+        elif 'mt5' in model_path.lower() or 't5' in model_path.lower():
+            # mT5/T5 models are encoder-decoder (Seq2Seq)
+            # Use AutoTokenizer instead of T5Tokenizer for better compatibility
+            try:
+                tokenizer = T5Tokenizer.from_pretrained(model_path)
+            except ImportError:
+                # Fallback to AutoTokenizer if SentencePiece not available
+                tokenizer = AutoTokenizer.from_pretrained(model_path)
+            model = T5ForConditionalGeneration.from_pretrained(
+                model_path,
+                device_map="auto",
+                torch_dtype=torch.float16,  # Use float16 for better memory efficiency
+                resume_download=True,
                 cache_dir=os.path.join(model_cache_dir, model_path)
             )
          
         else:
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
             model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto",
+                                                                resume_download=True,
                                                                 cache_dir=os.path.join(model_cache_dir,model_path))
             
     return tokenizer,model
@@ -618,6 +645,31 @@ def model_inference(prompt,model_path,model,tokenizer,max_length=512):
             generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=True
         )[0]
     
+    elif 'mt5' in model_path.lower() or ('t5' in model_path.lower() and 'mt5' not in model_path.lower()):
+        # mT5/T5 models use encoder-decoder architecture
+        # Format prompt for T5 (add prefix if needed)
+        if not prompt.startswith('answer:') and not prompt.startswith('question:'):
+            # T5 models work better with task prefixes
+            formatted_prompt = f"question: {prompt} answer:"
+        else:
+            formatted_prompt = prompt
+        
+        input_ids = tokenizer(formatted_prompt, return_tensors="pt", padding=True, truncation=True, max_length=512).input_ids.to(model.device)
+        
+        with torch.no_grad():
+            generated_ids = model.generate(
+                input_ids,
+                max_length=max_length,
+                num_beams=4,
+                early_stopping=True,
+                no_repeat_ngram_size=2
+            )
+        
+        result = tokenizer.decode(generated_ids[0], skip_special_tokens=True)
+        # Remove the prompt from result if it's included
+        if formatted_prompt.lower() in result.lower():
+            result = result.replace(formatted_prompt, "").strip()
+    
     else:
         input_ids = tokenizer(prompt, return_tensors="pt", return_token_type_ids=False).to(model.device)
         outputs = model.generate(**input_ids,max_length=max_length)
@@ -822,6 +874,9 @@ def get_model_response(model_name,prompt,model,tokenizer,temperature,top_p,gpt_a
         response = get_together_response(prompt,model_name=model_name,temperature=temperature,top_p=top_p)
     elif 'Qwen' in model_name and '3B' in model_name:
         # Local Qwen 3B model
+        response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)
+    elif 'mt5' in model_name.lower() or 't5' in model_name.lower():
+        # mT5/T5 models (encoder-decoder)
         response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)
     else:
         response = model_inference(prompt,model_path=model_name,model=model,tokenizer=tokenizer)
