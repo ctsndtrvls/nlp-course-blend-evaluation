@@ -6,7 +6,8 @@
       "language": "English",
       "SEM-B": 8.24295010845987,
       "SEM-W": 7.230657989877079,
-      "num_questions": 50
+      "num_questions": 50,
+      "accuracy":0.03
     },
     {
       "model": "mt5-small",
@@ -14,7 +15,8 @@
       "language": "Spanish",
       "SEM-B": 0.20876826722338201,
       "SEM-W": 0.069589422407794,
-      "num_questions": 100
+      "num_questions": 100,
+      "accuracy":0.0
     },
     {
       "model": "mt5-small",
@@ -22,7 +24,8 @@
       "language": "Chinese",
       "SEM-B": 0.21097046413502107,
       "SEM-W": 0.21097046413502107,
-      "num_questions": 100
+      "num_questions": 100,
+      "accuracy":0.06
     },
     {
       "model": "t5-small",
@@ -30,7 +33,8 @@
       "language": "English",
       "SEM-B": 1.3015184381778742,
       "SEM-W": 1.0303687635574839,
-      "num_questions": 100
+      "num_questions": 100,
+      "accuracy":0.1
     },
     {
       "model": "Qwen2.5-3B-Instruct",
@@ -38,7 +42,8 @@
       "language": "Spanish",
       "SEM-B": 4.592901878914405,
       "SEM-W": 3.395963813500348,
-      "num_questions": 50
+      "num_questions": 50,
+      "accuracy":0.0
     },
     {
       "model": "Qwen2.5-3B-Instruct",
@@ -46,7 +51,8 @@
       "language": "Chinese",
       "SEM-B": 5.274261603375527,
       "SEM-W": 4.040084388185654,
-      "num_questions": 50
+      "num_questions": 50,
+      "accuracy":0.06
     }
   ]
 }
